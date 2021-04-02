@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
+use GuzzleHttp\Handler\Proxy;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +18,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        $this->call([
+            // UserSeeder::class,
+            // CategorySeeder::class,
+            // StockSeeder::class,
+        ]);
+
+        // Category::factory(10)->create();
+        // Product::factory(10)->create();
+        // Brand::factory(10)->create();
     }
 }

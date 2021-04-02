@@ -17,9 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('mobile')->nullable()->unique();
+            $table->enum('role', ["admin", "customer"])->default('customer');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+// انا خليت ال rememberToken ياخد null عشان اعرف اعمل seed
+            $table->rememberToken()->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->timestamps();
@@ -34,5 +37,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-    }
+
+   }
 }
