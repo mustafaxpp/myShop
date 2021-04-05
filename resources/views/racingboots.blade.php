@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestuser-layout>
 
  <div class="collection_text">Racing Boots</div>
    <div class="about_main layout_padding">
@@ -25,4 +25,4 @@
     </div>
     </div>
 
-</x-guest-layout>
+</x-guestuser-layout>

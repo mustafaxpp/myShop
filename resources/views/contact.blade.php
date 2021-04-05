@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestuser-layout>
 
 
   <div class="collection_text">Contact Us</div>
@@ -48,4 +48,4 @@
 
 
 
-</x-guest-layout>
+</x-guestuser-layout>

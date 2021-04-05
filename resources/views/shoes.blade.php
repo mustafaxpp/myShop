@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestuser-layout>
 
 <div class="collection_text">Shoes</div>
     <div>
@@ -137,4 +137,4 @@
     	</div>
     </div>
 
-</x-guest-layout>
+</x-guestuser-layout>

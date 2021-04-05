@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestuser-layout>
 <!-- new collection section start -->
   <div class="collection_text">Collection</div>
     <div>
@@ -44,4 +44,4 @@
     	    </div>
     	</div>
     </div>
-</x-guest-layout>
+</x-guestuser-layout>
