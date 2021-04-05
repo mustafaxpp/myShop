@@ -13,10 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::prefix("/")->middleware([])->group(function(){
+
+    Route::get('/', function () {
+        return view('index');
+    })->name('index');
+
+    Route::get('/shoes', function () {
+        return view('shoes');
+    })->name('shoes');
+
+    Route::get('/racingboots', function () {
+        return view('racingboots');
+    })->name('racingboots');
+
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
+
+    Route::get('/collection', function () {
+        return view('collection');
+    })->name('collection');
+
+
+});
