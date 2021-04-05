@@ -22,15 +22,15 @@
                             <div class="form-group">
                               <input type="text" class="email-bt" placeholder="Email" name="Email">
                             </div>
-                            
+
                             <div class="form-group">
                                 <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
                             </div>
-                          </form>   
-                       </div> 
+                          </form>
+                       </div>
                        <div class="send_btn">
                         <button class="main_bt">Send</button>
-                       </div>                   
+                       </div>
                     </div>
     		</div>
     			</div>

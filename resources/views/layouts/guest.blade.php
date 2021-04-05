@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Pullshoes</title>
+      <title>MyShop</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -24,7 +24,7 @@
       <link rel="stylesheet" href='{{asset("css/jquery.mCustomScrollbar.min.css")}}'>
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
+      <!-- owl stylesheets -->
       <link rel="stylesheet" href='{{asset("css/owl.carousel.min.css")}}'>
       <link rel="stylesheet" href='{{asset("css/owl.theme.default.min.css")}}'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -89,7 +89,7 @@
     				</div>
     				<div class="col-sm-2"></div>
     			</div>
-    	    </div> 
+    	    </div>
     	    <div class="footer_section_2">
 		        <div class="row">
     		        <div class="col-sm-4 col-lg-2">
@@ -131,7 +131,7 @@
                     <button class="subscribr_bt">Subscribe</button>
     			</div>
     			</div>
-    	        </div> 
+    	        </div>
 	        </div>
     	</div>
     </div>
@@ -148,7 +148,7 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-      <!-- javascript --> 
+      <!-- javascript -->
       <script src="js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       <script>
@@ -157,8 +157,8 @@
          openEffect: "none",
          closeEffect: "none"
          });
-         
-         
+
+
 $('#myCarousel').carousel({
             interval: false
         });
@@ -183,6 +183,6 @@ $('#myCarousel').carousel({
             });
         });
       </script>
-        @livewireScripts 
+        @livewireScripts
    </body>
 </html>
