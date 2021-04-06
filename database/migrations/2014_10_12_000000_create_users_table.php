@@ -18,11 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('mobile')->nullable()->unique();
-            $table->enum('role', ["admin", "customer"])->default('customer');
+            $table->enum('role', ["admin", "customer"])->nullable()->default('customer');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 // انا خليت ال rememberToken ياخد null عشان اعرف اعمل seed
-            $table->rememberToken()->nullable();
+            $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->timestamps();

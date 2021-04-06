@@ -17,11 +17,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 
+Route::prefix("/dashboard")->group(function(){
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/user', function () {
+        return view('user.index');
+    })->name('user');
+});
 Route::prefix("/")->middleware([])->group(function(){
 
     Route::get('/', function () {
