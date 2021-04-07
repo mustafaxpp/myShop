@@ -16,10 +16,17 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+
                 {{-- Users --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
                         {{ __('messages.Users') }}
+                    </x-jet-nav-link>
+                </div>
+                 {{--Brands--}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('brand') }}" :active="request()->routeIs('brand')">
+                        {{ __('messages.Brands') }}
                     </x-jet-nav-link>
                 </div>
             </div>

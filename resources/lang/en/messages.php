@@ -3,7 +3,7 @@
 
 return [
     'Users' =>"Users",
-    '' =>"",
+    'Brands' =>"Brands",
     '' =>"",
     '' =>"",
     '' =>"",
