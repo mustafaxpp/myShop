@@ -22,14 +22,19 @@ use Illuminate\Support\Facades\Route;
 // })->name('dashboard');
 
 
-Route::prefix("/dashboard")->group(function(){
+Route::prefix("/dashboard")->middleware(['check_role'])->group(function(){
 
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::get('/user', function () {
         return view('user.index');
     })->name('user');
+
+    Route::get('/brand', function () {
+        return view('brand.index');
+    })->name('brand');
 });
 Route::prefix("/")->middleware([])->group(function(){
 

@@ -47,9 +47,7 @@
             <div class="col-md-8">
                 <h3 class="text-center">
                     <strong>
-                        <u>
                            All Users Table
-                        </u>
                     </strong>
                 </h3>
                 <table class="table table-light table-hover">
