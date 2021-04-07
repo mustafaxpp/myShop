@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->enum('role', ["admin", "customer"])->nullable()->default('customer');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-// انا خليت ال rememberToken ياخد null عشان اعرف اعمل seed
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();

@@ -22,6 +22,7 @@ class UserComponent extends Component
     protected $rules = [
         'name' => 'required|min:2',
         'email' => 'required|unique:users',
+        // ['required', 'email', 'not_in:' . auth()->user()->email],
         'mobile' => 'nullable|min:10',
         'role' => 'nullable',
     ];
