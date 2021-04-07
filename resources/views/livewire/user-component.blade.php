@@ -33,14 +33,8 @@
                       </select>
                       @error('role') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <!-- Password input -->
-                    <div class="form-outline mb-2">
-                        <label class="form-label" wire:model="password" for="form3Example4">Password</label>
-                      <input type="password" id="form3Example4" class="form-control" />
-                      @error('password') <span class="error">{{ $message }}</span> @enderror
-                    </div>
                     <!-- Submit button -->
-                    <button type="submit" wire:click="save" class="btn btn-primary btn-block mb-4"> Save </button>
+                    <button wire:click="save" class="btn btn-primary btn-block mb-4"> Save </button>
 
                 </form>
             </div>
@@ -52,34 +46,41 @@
                         </u>
                     </strong>
                 </h3>
-                <table class="table table-light table-hover">
+                <table class="table table-light table-hover text-center">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Last</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
                         <th scope="col">Role</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
+                      @forelse (App\Models\User::all() as $user)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Moustafa</td>
-                        <td>Ibrahim</td>
-                        <td>@webdeveloper</td>
+                        <th>{{$user->id}}</th>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        {{-- user mobile --}}
+                            @if ($user->mobile)
+                            <td>{{$user->mobile}}</td>
+                            @else
+                            <td class="text-center"> - </td>
+                            @endif
+                        {{-- user Role --}}
+                            @if ($user->role =="admin")
+                            <b> <td class="text-danger text-uppercase">{{$user->role}}</td> </b>
+                            @else
+                            <td class="text-success">{{$user->role}}</td>
+                            @endif
+                            <td> <a class="btn btn-success btn-sm text-light" wire:click='edit({{$user->id}})' > Edit </a> </td>
+                            <td> <a class="btn btn-danger btn-sm text-light" wire:click='delete({{$user->id}})' > X </a> </td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Islam</td>
-                        <td>kabbary</td>
-                        <td>@webdeveloper</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      @empty
+
+                      @endforelse
                     </tbody>
                   </table>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,7 +15,7 @@ class UserComponent extends Component
     public $email;
     public $mobile;
     public $role;
-    public $password;
+    public $user_id;
 
 
 
@@ -23,7 +24,6 @@ class UserComponent extends Component
         'email' => 'required|unique:users',
         'mobile' => 'nullable|min:10',
         'role' => 'nullable',
-        'password' => 'nullable',
     ];
     public function render()
     {
@@ -38,6 +38,34 @@ class UserComponent extends Component
     public function save(){
 
         $this->validate();
+
+        if($this->user_id){
+            $user = User::find($this->user_id);
+        }else{
+            $user = new User();
+        }
+        $user->name = $this->name;
+        $user->email = $this->email;
+        $user->mobile = $this->mobile;
+        $user->role = $this->role;
+        $user->password = bcrypt('1234567');
+        $user->save();
+
+    }
+
+    public function edit($user_id){
+
+        $user = User::find($user_id);
+
+        $this->name = $user->name;
+        $this->email = $user->email;
+        $this->mobile = $user->mobile;
+        $this->role = $user->role;
+        $this->password = bcrypt('1234567');
+    }
+    public function delete($user_id){
+
+        User::destroy($user_id);
     }
 
 }

@@ -4,6 +4,6 @@
             {{ __('messages.Users') }}
         </h2>
     </x-slot>
-
-    @livewire('user-component', [], key(1))
+    {{-- @livewire('user-component', [], key(1)) --}}
+    @livewire('user-component')
 </x-app-layout>
