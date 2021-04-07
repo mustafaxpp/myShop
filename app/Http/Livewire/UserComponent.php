@@ -36,7 +36,7 @@ class UserComponent extends Component
     }
 
     public function save(){
-
+        
         $this->validate();
 
         if($this->user_id){

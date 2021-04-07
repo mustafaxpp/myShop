@@ -40,7 +40,7 @@
                         <tbody>
                             @forelse (\App\models\Brand::all() as $brand )
                                 <tr>
-                                    <th scope="row">{{ $brand->id }}</th>
+                                    <th>{{ $brand->id }}</th>
                                     <td>{{ $brand->name }}</td>
                                     <td>{{ $brand->logo }}</td>
                                     <td><a class='btn btn-sm rounded-circle btn-success' title='edit  {{ $brand->name }}'

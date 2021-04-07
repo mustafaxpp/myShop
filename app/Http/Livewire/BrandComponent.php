@@ -11,7 +11,9 @@ class BrandComponent extends Component
 
     use WithFileUploads;
 
-    public $name, $logo, $brand_id;
+    public $name ;
+    public $logo ;
+    public $brand_id;
 
     protected $rules = [
         'name' => 'required|max:25',
@@ -31,7 +33,6 @@ class BrandComponent extends Component
     public function save()
     {
         $this->validate();
-
         if ($this->brand_id)
             $brand = Brand::find($this->brand_id);
         else {
