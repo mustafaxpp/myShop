@@ -43,9 +43,9 @@
                                     <th>{{ $brand->id }}</th>
                                     <td>{{ $brand->name }}</td>
                                     <td>{{ $brand->logo }}</td>
-                                    <td><a class='btn btn-sm rounded-circle btn-success' title='edit  {{ $brand->name }}'
+                                    <td><a class='btn btn-success btn-sm text-light' title='edit  {{ $brand->name }}'
                                             wire:click='edit({{ $brand->id }})' role='button'>Edit</a></td>
-                                    <td><a class='btn btn-sm rounded-circle btn-danger' title='delete  {{ $brand->name }}'
+                                    <td><a class='btn btn-danger btn-sm text-light' title='delete  {{ $brand->name }}'
                                             wire:click='delete({{ $brand->id }})' role='button'>X</a></td>
                                 </tr>
                             @empty

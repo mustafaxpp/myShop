@@ -35,7 +35,17 @@ Route::prefix("/dashboard")->middleware(['check_role'])->group(function(){
     Route::get('/brand', function () {
         return view('brand.index');
     })->name('brand');
+
+    Route::get('/stock', function () {
+        return view('stock.index');
+    })->name('stock');
+
+    Route::get('/category', function () {
+        return view('category.index');
+    })->name('category');
 });
+
+
 Route::prefix("/")->middleware([])->group(function(){
 
     Route::get('/', function () {
