@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\StockController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 // })->name('dashboard');
 
 
-Route::prefix("/dashboard")->middleware(['check_role'])->group(function(){
+Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
 
     Route::get('/', function () {
         return view('dashboard');
@@ -32,21 +35,12 @@ Route::prefix("/dashboard")->middleware(['check_role'])->group(function(){
         return view('user.index');
     })->name('user');
 
-    Route::get('/brand', function () {
-        return view('brand.index');
-    })->name('brand');
-
-    Route::get('/stock', function () {
-        return view('stock.index');
-    })->name('stock');
-
-    Route::get('/category', function () {
-        return view('category.index');
-    })->name('category');
+    Route::get('/brand', [BrandController::class, "index"])->name('brand');
+    Route::get('/stock', [StockController::class, "index"])->name('stock');
+    Route::get('/category', [CategoryController::class, "index"])->name('category');
 });
 
-
-Route::prefix("/")->middleware([])->group(function(){
+Route::prefix("/")->middleware([])->group(function () {
 
     Route::get('/', function () {
         return view('index');
@@ -67,6 +61,4 @@ Route::prefix("/")->middleware([])->group(function(){
     Route::get('/collection', function () {
         return view('collection');
     })->name('collection');
-
-
 });
