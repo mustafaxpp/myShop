@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // })->name('dashboard');
 
 
-Route::prefix("/dashboard")->middleware(['check_role'])->group(function(){
+Route::prefix("/dashboard")->middleware([])->group(function(){
 
     Route::get('/', function () {
         return view('dashboard');

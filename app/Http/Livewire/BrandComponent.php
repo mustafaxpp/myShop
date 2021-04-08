@@ -33,6 +33,9 @@ class BrandComponent extends Component
     public function save()
     {
         $this->validate();
+
+        $photo = $this->logo->store('photo_brands' , "public");
+
         if ($this->brand_id)
             $brand = Brand::find($this->brand_id);
         else {
@@ -40,7 +43,7 @@ class BrandComponent extends Component
         }
 
         $brand->name = $this->name;
-        $brand->logo = $this->logo;
+        $brand->logo = $photo;
         $brand->save();
     }
 

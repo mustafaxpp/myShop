@@ -1,10 +1,9 @@
 <div>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4">
-                <form>
+            {{-- <div class="col-md-4">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
-                    @csrf
+
                     <!-- Name input -->
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form3Example1"> Name</label>
@@ -36,9 +35,10 @@
                     <!-- Submit button -->
                     <button wire:click="save" class="btn btn-primary btn-block mb-4"> Save </button>
 
-                </form>
-            </div>
-            <div class="col-md-8">
+
+            </div> --}}
+
+            <div class="col-md-8 m-auto">
                 <h3 class="text-center">
                     <strong>
                            All Users Table
@@ -56,7 +56,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @forelse (App\Models\User::all() as $user)
+                      @forelse (\App\Models\User::all() as $user)
                       <tr>
                         <th>{{$user->id}}</th>
                         <td>{{$user->name}}</td>

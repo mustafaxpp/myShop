@@ -17,7 +17,18 @@
                 <div class="carousel-item active">
                     <div class="row">
 					<div class="col-sm-2 padding_0">
-						<p class="mens_taital">Men Shoes</p>
+
+                        @if (Route::has('login'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
+                                @endif
+                            @endauth
+                        @endif
 						<div class="page_no">0/2</div>
 						<p class="mens_taital_2">Men Shoes</p>
 					</div>

@@ -22,7 +22,6 @@ class UserComponent extends Component
     protected $rules = [
         'name' => 'required|min:2',
         'email' => 'required|unique:users',
-        // ['required', 'email', 'not_in:' . auth()->user()->email],
         'mobile' => 'nullable|min:10',
         'role' => 'nullable',
     ];
@@ -37,19 +36,27 @@ class UserComponent extends Component
     }
 
     public function save(){
-        
+
         $this->validate();
+
 
         if($this->user_id){
             $user = User::find($this->user_id);
         }else{
             $user = new User();
         }
+        $user->user_id = $this->user->id;
         $user->name = $this->name;
         $user->email = $this->email;
         $user->mobile = $this->mobile;
         $user->role = $this->role;
+        $user->email_verified_at = null;
         $user->password = bcrypt('1234567');
+        $user->two_factor_secret = null;
+        $user->two_factor_recovery_codes = null;
+        $user->remember_token = null;
+        $user->current_team_id = null;
+        $user->profile_photo_path = null;
         $user->save();
 
     }
@@ -58,11 +65,18 @@ class UserComponent extends Component
 
         $user = User::find($user_id);
 
+        $this->user_id = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
         $this->mobile = $user->mobile;
         $this->role = $user->role;
+        $this->email_verified_at = null;
         $this->password = bcrypt('1234567');
+        $this->two_factor_secret = null;
+        $this->two_factor_recovery_codes = null;
+        $this->remember_token = null;
+        $this->current_team_id = null;
+        $this->profile_photo_path = null;
     }
     public function delete($user_id){
 
