@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
+
                     <!-- Name input -->
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form3Example1"> Name </label>
@@ -20,7 +21,10 @@
                     </select>
                     <!-- Submit button -->
                     <button wire:click="save" class="btn btn-primary btn-block mt-2"> Save </button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8078b65641c9219e7108b00ebd73974fbd621e4d
             </div>
             <div class="col-md-8">
                 <h3 class="text-center">
