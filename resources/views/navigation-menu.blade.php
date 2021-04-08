@@ -37,8 +37,14 @@
                 </div>
                 {{-- Categories --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('category') }}" :active="request()->routeIs('cate')">
+                    <x-jet-nav-link href="{{ route('category') }}" :active="request()->routeIs('category')">
                         {{ __('messages.Categories') }}
+                    </x-jet-nav-link>
+                </div>
+                {{-- Products --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('product') }}" :active="request()->routeIs('product')">
+                        {{ __('messages.Products') }}
                     </x-jet-nav-link>
                 </div>
             </div>

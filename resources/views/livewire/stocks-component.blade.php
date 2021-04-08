@@ -18,7 +18,7 @@
                         @error('count') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <!-- Submit button -->
-                    <button type="submit" wire:click="save" class="btn btn-primary btn-block mb-4"> Save </button>
+                    <a type="button" wire:click="save" class="btn btn-primary btn-block mb-4"> Save </a>
 
                 </form>
             </div>
