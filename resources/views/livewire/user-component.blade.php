@@ -3,7 +3,6 @@
         <div class="row">
             {{-- <div class="col-md-4">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
-
                     <!-- Name input -->
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form3Example1"> Name</label>

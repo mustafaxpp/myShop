@@ -12,7 +12,7 @@
                         @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <!-- Category_id -->
-                    <select class="form-control-md rounded mb-2 ml-20"  wire:model="category_id">
+                    <select class="form-control-md rounded mb-2 ml-20" wire:model="category_id">
                         <option value="">Select Category</option>
                         @forelse ( \App\Models\Category::all() as $cat)
                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
@@ -21,7 +21,7 @@
                         @endforelse
                     </select>
                     <!-- Submit button -->
-                    <button type="submit" wire:click="save" class="btn btn-primary btn-block mt-1"> Save </button>
+                    <button type="submit" wire:click="save" class="btn btn-primary btn-block mt-2"> Save </button>
 
                 </form>
             </div>
