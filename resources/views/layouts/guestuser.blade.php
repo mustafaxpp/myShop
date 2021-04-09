@@ -28,7 +28,13 @@
       <link rel="stylesheet" href='{{asset("css/owl.carousel.min.css")}}'>
       <link rel="stylesheet" href='{{asset("css/owl.theme.default.min.css")}}'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-@livewireStyles
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+      @livewireStyles
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -37,7 +43,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
-					<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+					<div class="logo"><a href="/"><img src="images/logo.png"></a></div>
 				</div>
 				<div class="col-sm-9">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
