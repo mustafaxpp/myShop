@@ -41,6 +41,24 @@
                         {{ __('messages.Categories') }}
                     </x-jet-nav-link>
                 </div>
+                 {{-- Supplier --}}
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                     <x-jet-nav-link href="{{ route('supplier') }}" :active="request()->routeIs('supplier')">
+                        {{ __('messages.Suppliers') }}
+                    </x-jet-nav-link>
+                    {{-- Shipping Companies --}}
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('shipping') }}" :active="request()->routeIs('shipping')">
+                            {{ __('messages.Shipping') }}
+                        </x-jet-nav-link>
+                    </div>
+                    {{-- Payment Method --}}
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('payment') }}" :active="request()->routeIs('payment')">
+                            {{ __('messages.Payment') }}
+                        </x-jet-nav-link>
+                    </div>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
