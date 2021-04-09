@@ -17,10 +17,10 @@ class CheckRole
     public function handle(Request $request, Closure $next)
     {
 
-        // if (auth()->user()->role == "admin")
+        if (auth()->user()->role == "admin")
             return $next($request);
-        // else {
-        //     abort("401");
-        // }
+        else {
+            return redirect(route("index"));
+        }
     }
 }
