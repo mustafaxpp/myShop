@@ -50,6 +50,8 @@
                                         wire:click='delete({{ $cat->id }})' role='button'>X</a></td>
                             </tr>
                         @empty
+                        <td colspan="5" class="text-danger text-center"> There is no Category yet</td>
+
                         @endforelse
 
                     </tbody>

@@ -48,6 +48,8 @@
                                             wire:click='delete({{ $brand->id }})' role='button'>X</a></td>
                                 </tr>
                             @empty
+                            <td colspan="5" class="text-danger text-center"> There is no Brand yet</td>
+
                             @endforelse
 
                         </tbody>

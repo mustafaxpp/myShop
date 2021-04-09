@@ -97,6 +97,8 @@
                                 </td>
                             </tr>
                         @empty
+                        <td colspan="5" class="text-danger text-center"> There is no Product yet</td>
+
                         @endforelse
 
                     </tbody>

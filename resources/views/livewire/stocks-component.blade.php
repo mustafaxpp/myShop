@@ -49,6 +49,8 @@
                                         wire:click='delete({{ $stock->id }})' role='button'>X</a></td>
                             </tr>
                         @empty
+                        <td colspan="5" class="text-danger text-center"> There is no Stock yet</td>
+
                         @endforelse
 
                     </tbody>
