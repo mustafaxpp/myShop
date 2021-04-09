@@ -7,7 +7,7 @@ return [
     'Stocks' => "Stocks",
     'Categories' => "Categories",
     'Products' => "Products",
-    '' => "",
+    'OrderProducts' => "OrderProducts",
     '' => "",
     '' => "",
     '' => "",

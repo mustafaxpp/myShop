@@ -39,7 +39,7 @@
                                     <th>{{ $brand->id }}</th>
                                     <td>{{ $brand->name }}</td>
                                     <td>
-                                        <img width="100" src="{{ url('storage/' . $brand->logo) }}" class="img-fluid"
+                                        <img width="50" src="{{ url('storage/' . $brand->logo) }}" class="img-fluid"
                                             alt="">
                                     </td>
                                     <td><a class='btn btn-success btn-sm text-light' title='edit {{ $brand->name }}'

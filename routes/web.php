@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\ProductController;
+use App\Models\OrderProduct;
 use App\Models\Product;
 
 /*
@@ -42,6 +44,7 @@ Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
     Route::get('/stock', [StockController::class, "index"])->name('stock');
     Route::get('/category', [CategoryController::class, "index"])->name('category');
     Route::get('/product', [ProductController::class, "index"])->name('product');
+    Route::get('/orderproduct', [OrderProductController::class, "index"])->name('orderproduct');
 });
 
 Route::prefix("/")->middleware([])->group(function () {

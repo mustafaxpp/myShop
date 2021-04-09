@@ -86,7 +86,7 @@
                                 <th>{{ $product->id }}</th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
-                                <td>{{ $product->image }}</td>
+                                <td><img width="50" src="{{ url('storage/' . $product->image) }}" class="img-fluid"></td>
                                 <td>{{ $product->category_id }}</td>
                                 <td>{{ $product->brand_id }}</td>
                                 <td>{{ $product->stock_id }}</td>
