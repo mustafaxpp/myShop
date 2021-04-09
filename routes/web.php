@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
 use App\Http\Controllers\SupplierController;
@@ -49,6 +50,7 @@ Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
     Route::get('/shipping', [ShippingCompanyController::class, "index"])->name('shipping');
     Route::get('/payment', [PaymentMethodController::class, "index"])->name('payment');
     Route::get('/product', [ProductController::class, "index"])->name('product');
+    Route::get('/order', [OrderController::class, "index"])->name('order');
 });
 
 Route::prefix("/")->middleware([])->group(function () {

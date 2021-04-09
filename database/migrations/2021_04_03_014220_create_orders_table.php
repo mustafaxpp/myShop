@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->enum("status",["pendding" , "canceled" , "accepted","delivered"]);
+            $table->enum("status",["pendding" , "canceled" , "accepted","delivered"])->default("pendding");
             $table->decimal("total_invoice")->nullable();
             $table->timestamp("received_at")->nullable();
             $table->foreignId("shipping_companies_id")->constrained("shipping_companies");
