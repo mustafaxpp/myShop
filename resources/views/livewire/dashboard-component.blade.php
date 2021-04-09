@@ -1,5 +1,8 @@
-{{-- <div>
-    <div class="container mt-5">
+<div>
+    <h1 class="text-center">
+        Welcome To Your Dashboard
+    </h1>
+    {{-- <div class="container mt-5">
         <div class="row">
             <div class="col-4">
                 <form>
@@ -75,5 +78,5 @@
                   </table>
             </div>
         </div>
-    </div>
-</div> --}}
+    </div> --}}
+</div>
