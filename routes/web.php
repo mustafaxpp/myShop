@@ -6,11 +6,13 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
 use App\Http\Controllers\SupplierController;
 use App\Models\ShippingCompany;
 use App\Http\Controllers\ProductController;
+use App\Models\OrderProduct;
 use App\Models\Product;
 
 /*
@@ -51,6 +53,7 @@ Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
     Route::get('/payment', [PaymentMethodController::class, "index"])->name('payment');
     Route::get('/product', [ProductController::class, "index"])->name('product');
     Route::get('/order', [OrderController::class, "index"])->name('order');
+    Route::get('/orderproduct', [OrderProductController::class, "index"])->name('orderproduct');
 });
 
 Route::prefix("/")->middleware([])->group(function () {

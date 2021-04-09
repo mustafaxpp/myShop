@@ -10,11 +10,15 @@ class Product extends Model
     use HasFactory;
 
 
+    function order_products(){
+        return $this->hasMany(OrderProduct::class, 'product_id', 'id');
+    }
 
 
-    public function order_products()
+  
+    public function orders()
     {
-        return $this->hasMany(OrderProduct::class);
+        return $this->belongsToMany(Order::class,OrderProduct::class, 'product_id' , 'order_id');
     }
 
     public function brand()
@@ -32,6 +36,4 @@ class Product extends Model
     {
         return $this->belongsTo(Stock::class);
     }
-
-
 }
