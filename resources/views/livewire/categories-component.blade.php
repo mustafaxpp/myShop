@@ -2,25 +2,26 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                <!-- 2 column grid layout with text inputs for the first and last names -->
 
-                    <!-- Name input -->
-                    <div class="form-outline mb-2">
-                        <label class="form-label" for="form3Example1"> Name </label>
-                        <input type="text" wire:model="name" id="form3Example1" class="form-control" />
-                        @error('name') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <!-- Category_id -->
-                    <select class="form-control-md rounded mb-2 ml-20" wire:model="category_id">
-                        <option value="">Select Category</option>
-                        @forelse ( \App\Models\Category::all() as $cat)
-                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                        @empty
-                            <option value="">Empty</option>
-                        @endforelse
-                    </select>
-                    <!-- Submit button -->
-                    <button wire:click="save" class="btn btn-primary btn-block mt-2"> Save </button>
+                <!-- Name input -->
+                <div class="form-outline mb-2">
+                    <label class="form-label" for="form3Example1"> Name </label>
+                    <input type="text" wire:model="name" id="form3Example1" class="form-control" />
+                    @error('name') <span class="text-danger">{{ $message }}</span> @enderror
+                </div>
+                <!-- Category_id -->
+                <select class="form-control rounded mb-2" wire:model="category_id">
+                    <option value="">Select Category</option>
+                    @forelse ( \App\Models\Category::all() as $cat)
+                        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                    @empty
+                        <option value="">Empty</option>
+                    @endforelse
+                </select>
+                <!-- Submit button -->
+                <a type="button" wire:click="save" class="btn btn-primary btn-block mb-4"> Save </a>
+
             </div>
             <div class="col-md-8">
                 <h3 class="text-center">
