@@ -54,6 +54,8 @@
                                 </td>
                             </tr>
                         @empty
+                        <td colspan="5" class="text-danger text-center"> There is no OrderProduct yet</td>
+
                         @endforelse
 
                     </tbody>
