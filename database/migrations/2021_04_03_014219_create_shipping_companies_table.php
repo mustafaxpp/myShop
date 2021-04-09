@@ -16,7 +16,7 @@ class CreateShippingCompaniesTable extends Migration
         Schema::create('shipping_companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('number')->unique();
+            $table->string('number');
             $table->decimal('fees' , 8 , 2 , "30");
             $table->timestamps();
         });
