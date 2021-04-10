@@ -36,8 +36,8 @@
                                     <div class="col-sm-5">
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
-                                            <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <h1 class="mens_text "><strong>Men's Like Plex</strong></h1>
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -59,7 +59,7 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -81,7 +81,7 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>

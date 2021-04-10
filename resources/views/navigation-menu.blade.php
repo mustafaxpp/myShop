@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-             <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
@@ -163,7 +163,7 @@
                             @endif
                         </x-slot>
 
-                         <x-slot name="content">
+                        <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Account') }}
@@ -179,7 +179,7 @@
                                 </x-jet-dropdown-link>
                             @endif
 
-                           <div class="border-t border-gray-100"></div>
+                        <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
@@ -193,7 +193,7 @@
                         </x-slot>
                     </x-jet-dropdown>
                 </div>
-            </div> 
+            </div>
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
