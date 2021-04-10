@@ -1,4 +1,4 @@
-<x-guestuser-layout>
+<x-loginuser-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -57,4 +57,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guestuser-layout>
+</x-loginuser-layout>

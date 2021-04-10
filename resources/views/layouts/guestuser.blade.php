@@ -39,10 +39,11 @@
     <div class="header_section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-1">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2">
                     <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
                 </div>
-                <div class="col-sm-11">
+                <div class="col-sm-9">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -255,58 +256,58 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- section footer end -->
-    <div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html Templates</a></div>
+                <!-- section footer end -->
+                <div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html
+                        Templates</a></div>
 
 
-    <!-- Javascript files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
-    <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- javascript -->
-    <script src="js/owl.carousel.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script>
-        $(document).ready(function() {
-                    $(".fancybox").fancybox({
-                        openEffect: "none",
-                        closeEffect: "none"
-                    });
+                <!-- Javascript files-->
+                <script src="js/jquery.min.js"></script>
+                <script src="js/popper.min.js"></script>
+                <script src="js/bootstrap.bundle.min.js"></script>
+                <script src="js/jquery-3.0.0.min.js"></script>
+                <script src="js/plugin.js"></script>
+                <!-- sidebar -->
+                <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+                <script src="js/custom.js"></script>
+                <!-- javascript -->
+                <script src="js/owl.carousel.js"></script>
+                <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js">
+                </script>
+                <script>
+                    $(document).ready(function() {
+                                $(".fancybox").fancybox({
+                                    openEffect: "none",
+                                    closeEffect: "none"
+                                });
 
 
-                    $('#myCarousel').carousel({
-                        interval: false
-                    });
+                                $('#myCarousel').carousel({
+                                    interval: false
+                                });
 
-                    //scroll slides on swipe for touch enabled devices
+                                //scroll slides on swipe for touch enabled devices
 
-                    $("#myCarousel").on("touchstart", function(event) {
+                                $("#myCarousel").on("touchstart", function(event) {
 
-                        var yClick = event.originalEvent.touches[0].pageY;
-                        $(this).one("touchmove", function(event) {
+                                    var yClick = event.originalEvent.touches[0].pageY;
+                                    $(this).one("touchmove", function(event) {
 
-                            var yMove = event.originalEvent.touches[0].pageY;
-                            if (Math.floor(yClick - yMove) > 1) {
-                                $(".carousel").carousel('next');
-                            } else if (Math.floor(yClick - yMove) < -1) {
-                                $(".carousel").carousel('prev');
-                            }
-                        });
-                        $(".carousel").on("touchend", function() {
-                            $(this).off("touchmove");
-                        });
-                    });
+                                        var yMove = event.originalEvent.touches[0]
+                                            .pageY;
+                                        if (Math.floor(yClick - yMove) > 1) {
+                                            $(".carousel").carousel('next');
+                                        } else if (Math.floor(yClick - yMove) < -1) {
+                                            $(".carousel").carousel('prev');
+                                        }
+                                    });
+                                    $(".carousel").on("touchend", function() {
+                                        $(this).off("touchmove");
+                                    });
+                                });
 
-    </script>
-    @livewireScripts
+                </script>
+                @livewireScripts
 </body>
 
 </html>
