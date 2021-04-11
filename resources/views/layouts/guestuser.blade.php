@@ -178,7 +178,7 @@
                                                                                     <x-jet-dropdown-link
                                                                                         href="{{ route('logout') }}"
                                                                                         onclick="event.preventDefault();
-                                                                            this.closest('form').submit();">
+                                                                                            this.closest('form').submit();">
                                                                                         {{ __('Log Out') }}
                                                                                     </x-jet-dropdown-link>
                                                                                 </form>
@@ -189,11 +189,10 @@
                                                             @elseif (Route::has('register'))
                                                                     {{-- <a href="{{ route('register') }}"class="nav-item nav-link">Register</a>
                                             <a href="{{ route('login') }}"class="nav-item nav-link">Log in </a> --}}
-                                                                    <li class="nav-item dropdown">
+                                                                    <li class="nav-item dropdown cursor" role="button">
                                                                         <a class="nav-link dropdown-toggle"
-                                                                            id="navbarNavAltMarkup"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false">
+                                                                            id="navbarNavAltMarkup" data-toggle="dropdown"
+                                                                            aria-haspopup="true" aria-expanded="false">
                                                                             Sign In
                                                                         </a>
                                                                         <div class="dropdown-menu"
@@ -209,7 +208,8 @@
                                                         </div>
                                                         <a class="nav-item nav-link last" href="#"><img
                                                                 src="images/search_icon.png"></a>
-                                                        <a class="nav-item nav-link last" href="contact.html"><img
+                                                        <a class="nav-item nav-link last"
+                                                            href="{{ route('cart') }}"><img
                                                                 src="images/shop_icon.png"></a>
                                                     </div>
                                                 </nav>

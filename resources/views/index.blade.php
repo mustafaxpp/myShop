@@ -37,7 +37,8 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text "><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing
+                                                elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -59,7 +60,8 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing
+                                                elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -81,7 +83,8 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing
+                                                elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -204,68 +207,35 @@
     <div class="layout_padding gallery_section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="best_shoes">
-                        <p class="best_text">Best Shoes </p>
-                        <div class="shoes_icon"><img src="images/shoes-img4.png"></div>
-                        <div class="star_text">
-                            <div class="left_part">
-                                <ul>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                </ul>
-                            </div>
-                            <div class="right_part">
-                                <div class="shoes_price">$ <span style="color: #ff4e5b;">60</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="best_shoes">
-                        <p class="best_text">Best Shoes </p>
-                        <div class="shoes_icon"><img src="images/shoes-img5.png"></div>
-                        <div class="star_text">
-                            <div class="left_part">
-                                <ul>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                </ul>
-                            </div>
-                            <div class="right_part">
-                                <div class="shoes_price">$ <span style="color: #ff4e5b;">400</span></div>
+                @forelse ( App\Models\Product::inRandomOrder()->limit(6)->get() as $product )
+                    <div class="col-sm-4">
+                        <div class="best_shoes mh-50">
+                            <p class="best_text">{{$product->name}}</p>
+                            <div class="shoes_icon"><img src="{{url('storage/' . $product->image)}}"></div>
+                            <a type="button" href="" wire:click="addToCard({{$product->id}})" class="btn btn-success ml-48"> Add To Cart </a>
+                            <div class="star_text">
+                                <div class="left_part">
+                                    <ul>
+                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="right_part">
+                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{$product->price}}</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="best_shoes">
-                        <p class="best_text">Best Shoes </p>
-                        <div class="shoes_icon"><img src="images/shoes-img6.png"></div>
-                        <div class="star_text">
-                            <div class="left_part">
-                                <ul>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                </ul>
-                            </div>
-                            <div class="right_part">
-                                <div class="shoes_price">$ <span style="color: #ff4e5b;">50</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @empty
+
+                @endforelse
             </div>
-            <div class="row">
+        </div>
+    </div>
+    {{-- <div class="row">
                 <div class="col-sm-4">
                     <div class="best_shoes">
                         <p class="best_text">Sports Shoes</p>
@@ -331,7 +301,7 @@
                 <button class="buy_text">Buy Now</button>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- New Arrivals section end -->
     <!-- contact section start -->
     <div class="layout_padding contact_section">
