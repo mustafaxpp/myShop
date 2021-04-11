@@ -224,7 +224,7 @@
                                     </ul>
                                 </div>
                                 <div class="right_part">
-                                    <div class="shoes_price">$<span style="color: #ff4e5b;">{{$product->price}}</span></div>
+                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{$product->price}}</span></div>
                                 </div>
                             </div>
                         </div>
