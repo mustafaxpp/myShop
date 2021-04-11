@@ -81,22 +81,6 @@
                                 <link rel="stylesheet"
                                     href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
                                     media="screen">
-<<<<<<< HEAD
-                                @if (Route::has('login') || Route::has('register')))
-                                <!-- Styles -->
-                                <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-                                <!-- Scripts -->
-                                <script src="{{ mix('js/app.js') }}" defer></script>
-                                @endif
-                                @livewireStyles
-                            </head>
-                            <!-- body -->
-
-                            <body class="main-layout">
-                                <!-- header section start -->
-                                <div class="header_section">
-                                    <div class="container-fluid">
-=======
 
                                 <!-- Styles -->
                                 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -111,7 +95,6 @@
                                 <!-- header section start -->
                                 <div class="header_section">
                                     <div class="container">
->>>>>>> 26005caf61208cad31ee3a3a61c49475d1518584
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
@@ -151,11 +134,7 @@
                                                                                 @else
                                                                                     <span class="inline-flex rounded-md">
                                                                                         <button type="button"
-<<<<<<< HEAD
                                                                                             class="inline-flex items-center px-2 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-=======
-                                                                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
->>>>>>> 26005caf61208cad31ee3a3a61c49475d1518584
                                                                                             {{ Auth::user()->name }}
 
                                                                                             <svg class="ml-2 -mr-0.5 h-4 w-4"
