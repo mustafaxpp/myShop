@@ -47,18 +47,18 @@
                         {{ __('messages.Suppliers') }}
                     </x-jet-nav-link>
                 </div>
-                    {{-- Shipping Companies --}}
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('shipping') }}" :active="request()->routeIs('shipping')">
-                            {{ __('messages.Shipping') }}
-                        </x-jet-nav-link>
-                    </div>
-                    {{-- Payment Method --}}
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('payment') }}" :active="request()->routeIs('payment')">
-                            {{ __('messages.Payment') }}
-                        </x-jet-nav-link>
-                    </div>
+                {{-- Shipping Companies --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('shipping') }}" :active="request()->routeIs('shipping')">
+                        {{ __('messages.Shipping') }}
+                    </x-jet-nav-link>
+                </div>
+                {{-- Payment Method --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('payment') }}" :active="request()->routeIs('payment')">
+                        {{ __('messages.Payment') }}
+                    </x-jet-nav-link>
+                </div>
                 {{-- Products --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('product') }}" :active="request()->routeIs('product')">
@@ -179,7 +179,7 @@
                                 </x-jet-dropdown-link>
                             @endif
 
-                        <div class="border-t border-gray-100"></div>
+                            <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">

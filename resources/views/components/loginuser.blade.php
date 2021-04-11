@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,10 +131,15 @@
                                                                 @endauth
                                                             @endif
                                                         </div>
+                                                        <a class="nav-item nav-link last" href="#"><img
+                                                                src="images/search_icon.png"></a>
+                                                        <a class="nav-item nav-link last"
+                                                            href="{{ route('cart') }}"><img
+                                                                src="images/shop_icon.png"></a>
                                                     </div>
                                                 </nav>
                                             </div>
                                         </div>
                                     </div>
 
-                                {{ $slot }}
+                                    {{ $slot }}

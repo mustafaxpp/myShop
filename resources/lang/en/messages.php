@@ -10,7 +10,7 @@ return [
     'Shipping' =>"Shipping Companies",
     'Payment' =>"Payment Methods",
     'Orders' =>"Orders",
-    '' =>"",
+    'Cart' =>"Cart",
     '' =>"",
     '' =>"",
     '' =>"",
