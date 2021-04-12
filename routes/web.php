@@ -78,6 +78,6 @@ Route::prefix("/")->middleware([])->group(function () {
     Route::get('/collection', function () {
         return view('collection');
     })->name('collection');
-    // Route::get('/cart{product?}', [CartController::class , "add"]);
-    Route::get('/cart', [CartController::class , "index"])->name('cart');
+    // Route::get('/cart/{product?}', [CartController::class , "add"]);
+    Route::get('/cart/{product?}', [CartController::class , "index"])->name('cart');
 });

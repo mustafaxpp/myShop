@@ -16,24 +16,24 @@
                     <tr>
                         <td>
                             <a href="#">
-                                {{-- <img class="img-fluid" src="{{ url('storage/' . $product->image) }}" /> --}}
+                                <img class="img-fluid" src="{{ url('storage/' . $product->image) }}" />
                             </a>
                         </td>
                         <td>
-                            {{-- {{ $products->name }} --}}
+                            {{ $product->name }}
                         </td>
                         <td>
                         </td>
                         <td>
-                            {{-- {{ $products->amount }} --}}
+                            {{ $product->amount }}
                         </td>
                         <td>
                         </td>
                         <td>
-                            {{-- {{ $products->price }} --}}
+                            {{ $product->price }}
                         </td>
                         <td>
-                            {{-- <a wire:click="removeFromCart({{ $products->id }})">Remove</a> --}}
+                            <a wire:click="removeFromCart({{ $product->id }})">Remove</a>
                         </td>
                     </tr>
                     <tr>
@@ -42,9 +42,9 @@
         @empty
 
         @endforelse
-        {{-- <div class="text-center w-full border-collapse p-6">
+         {{-- <div class="text-center w-full border-collapse p-6">
             <span class="text-lg">¡Your cart is empty!</span>
-        </div>
+        </div> --}}
     </div>
 </div>
 </div>
