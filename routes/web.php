@@ -15,6 +15,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
+use App\Http\Livewire\CartComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +78,6 @@ Route::prefix("/")->middleware([])->group(function () {
     Route::get('/collection', function () {
         return view('collection');
     })->name('collection');
+    // Route::get('/cart{product?}', [CartController::class , "add"]);
     Route::get('/cart', [CartController::class , "index"])->name('cart');
-
-
 });

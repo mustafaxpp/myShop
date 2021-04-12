@@ -144,9 +144,8 @@
                                 </div>
 
 
-                                    {{ $slot }}
-
-
-                                    @livewireScript
+                                {{ $slot }}
+                                @livewireScripts
                             </body>
 
+</html>

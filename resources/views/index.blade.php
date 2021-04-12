@@ -212,8 +212,7 @@
                         <div class="best_shoes mh-50">
                             <p class="best_text">{{ $product->name }}</p>
                             <div class="shoes_icon"><img src="{{ url('storage/' . $product->image) }}"></div>
-                            <a type="button" wire:click="add({{ $product }})" class="btn btn-success ml-48"> Add
-                                To Cart </a>
+                            <a type="button" wire:click="add({{ $product }})" class="btn btn-success ml-48"> Add </a>
                             <div class="star_text">
                                 <div class="left_part">
                                     <ul>
@@ -225,7 +224,7 @@
                                     </ul>
                                 </div>
                                 <div class="right_part">
-                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{ $product->price }}</span>
+                                    <div class="shoes_price">$<span style="color: #ff4e5b;">{{ $product->price }}</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,44 +1,48 @@
 <div>
-    <div class="table-main  table-bordered table-dark mt-20">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Images</th>
-                    <th>product Name</th>
-                    <th>Price</th>
-                    <th class="text-center">Quantity</th>
-                    <th>Total</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="#">
-                            {{-- <img class="img-fluid" src="{{ url('storage/' . $products->image) }}" /> --}}
-                        </a>
-                    </td>
-                    <td>
-                        {{-- {{ $products->name }} --}}
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        {{-- {{ $products->amount }} --}}
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        {{-- {{ $products->price }} --}}
-                    </td>
-                    <td>
-                        {{-- <a wire:click="removeFromCart({{ $products->id }})">Remove</a> --}}
-                    </td>
-                </tr>
-                <tr>
-            </tbody>
-        </table>
-        <div class="text-center w-full border-collapse p-6">
+    @forelse (session()->get("cart") as $product)
+        <div class="table-main  table-bordered table-dark mt-20">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Images</th>
+                        <th>product Name</th>
+                        <th>Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                {{-- <img class="img-fluid" src="{{ url('storage/' . $product->image) }}" /> --}}
+                            </a>
+                        </td>
+                        <td>
+                            {{-- {{ $products->name }} --}}
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            {{-- {{ $products->amount }} --}}
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            {{-- {{ $products->price }} --}}
+                        </td>
+                        <td>
+                            {{-- <a wire:click="removeFromCart({{ $products->id }})">Remove</a> --}}
+                        </td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+        @empty
+
+        @endforelse
+        {{-- <div class="text-center w-full border-collapse p-6">
             <span class="text-lg">¡Your cart is empty!</span>
         </div>
     </div>
