@@ -62,7 +62,7 @@
                 <a type="button" wire:click="save" class="btn btn-primary btn-block mb-4"> Save </a>
             </div>
             <div class="col-md-8">
-                <h3 class="text-center">
+                <h3 class="text-center text-danger">
                     <strong>
                         All Products Table
                     </strong>

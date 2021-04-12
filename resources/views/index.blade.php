@@ -210,9 +210,10 @@
                 @forelse ( App\Models\Product::inRandomOrder()->limit(6)->get() as $product )
                     <div class="col-sm-4">
                         <div class="best_shoes mh-50">
-                            <p class="best_text">{{$product->name}}</p>
-                            <div class="shoes_icon"><img src="{{url('storage/' . $product->image)}}"></div>
-                            <a type="button" href="" wire:click="addToCard({{$product->id}})" class="btn btn-success ml-48"> Add To Cart </a>
+                            <p class="best_text">{{ $product->name }}</p>
+                            <div class="shoes_icon"><img src="{{ url('storage/' . $product->image) }}"></div>
+                            <a type="button" wire:click="add({{ $product }})" class="btn btn-success ml-48"> Add
+                                To Cart </a>
                             <div class="star_text">
                                 <div class="left_part">
                                     <ul>
@@ -224,7 +225,8 @@
                                     </ul>
                                 </div>
                                 <div class="right_part">
-                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{$product->price}}</span></div>
+                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{ $product->price }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -23,7 +23,7 @@
                     <button wire:click="save" class="btn btn-primary btn-block mb-4"> Save </button>
             </div>
             <div class="col-8">
-                <h3 class="text-center">
+                <h3 class="text-center text-danger">
                     <strong>
                         <u>
                             Shipping Companies
