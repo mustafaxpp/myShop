@@ -6,16 +6,21 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class CartComponent extends Component
+class ShoppingCartComponent extends Component
 {
     use WithFileUploads;
-    public $product;
-    public $name;
 
+    public $name;
+    public $product_id;
 
     public function render()
     {
-        return view('livewire.cart-component');
+        return view('livewire.shopping-cart-component');
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     // public function removeFromCart($productId): void
@@ -33,9 +38,9 @@ class CartComponent extends Component
     // }
 
 
-public function add($product_id){
+public function add(product $product_id){
 
-    dd($this->product_id);
+    // dd($product_id);
     $product = Product::find($product_id);
        if(session()->has('cart')){
            $products =session()->get('cart');
@@ -47,7 +52,7 @@ public function add($product_id){
            $products->push($product);
            session()->put('cart' , $products);
        }
-       dd($products);
+    //    dd($products);
     //  return redirect()->back()->back();
 }
 

@@ -261,7 +261,7 @@ button {
     padding-left: 1.6rem;
 }
 
-	
+
 .last{ padding-left: 30px !important; }
 .banner_text{
 	width: 100%;
@@ -285,7 +285,7 @@ button {
 	margin-left: 0px;
 }
 
-.buy_bt{ 
+.buy_bt{
 	width: 32%;
 	height: 50px;
 	color: #ffffff;
@@ -327,20 +327,20 @@ body{
 /*------------------------------ vertical bootstrap slider----------------------------*/
 
 .carousel-inner> .carousel-item.carousel-item-next ,
-.carousel-inner > .carousel-item.active.carousel-item-right{ 
+.carousel-inner > .carousel-item.active.carousel-item-right{
     transform: translate3d(0, 100%, 0); -webkit-transform: translate3d(0, 100%, 0); -ms-transform: translate3d(0, 100%, 0); -moz-transform: translate3d(0, 100%, 0); -o-transform: translate3d(0, 100%, 0);  top: 0;
-    
+
 }
 .carousel-inner > .carousel-item.carousel-item-prev ,
-.carousel-inner > .carousel-item.active.carousel-item-left{ 
+.carousel-inner > .carousel-item.active.carousel-item-left{
     transform: translate3d(0,-100%, 0); -webkit-transform: translate3d(0,-100%, 0);  -moz-transform: translate3d(0,-100%, 0);-ms-transform: translate3d(0,-100%, 0); -o-transform: translate3d(0,-100%, 0); top: 0;
-    
+
 }
 .carousel-inner > .carousel-item.next.carousel-item-left ,
 .carousel-inner > .carousel-item.carousel-item-prev.carousel-item-right ,
 .carousel-inner > .carousel-item.active{
     transform:translate3d(0,0,0); -webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);; -moz-transform:translate3d(0,0,0); -o-transform:translate3d(0,0,0); top:0;
-    
+
 }
 
 /*------------------------------- vertical carousel indicators ------------------------------*/
@@ -350,7 +350,7 @@ body{
     bottom:0;
     margin:auto;
     height:20px;
-    right:-84px; 
+    right:-84px;
     left:auto;
     width:auto;
     -webkit-transform: rotate(90deg);
@@ -360,13 +360,13 @@ body{
     transform: rotate(90deg);
 }
 .carousel-indicators li{
-    display:block; margin-bottom:5px; border:1px solid #00a199; 
+    display:block; margin-bottom:5px; border:1px solid #00a199;
     margin-bottom: 5px;}
-    
+
 }
 .carousel-indicators li.active{
     margin-bottom:5px; background:#00a199;
-    
+
 }
 
 .collection_section{ width: 100%; float: left; padding-bottom: 0px; }
@@ -439,7 +439,7 @@ body{
 	font-size: 20pt;
 }
 .star_icon{ width: 25%; margin: 0 auto; text-align: center; }
-.star_icon ul{ margin: 0px; padding: 0px;} 
+.star_icon ul{ margin: 0px; padding: 0px;}
 .star_icon li{ float:left; padding-right:10px; padding-bottom: 25px;}
 
 .about-img2{
@@ -470,7 +470,7 @@ body{
 	color: #ffffff;
 	background-color: #ff4e5b;
 	color: #ffffff;
-	font-size: 16pt;	
+	font-size: 16pt;
 	margin-top: 35px;
     margin-bottom: 90px;
 }
@@ -487,15 +487,15 @@ body{
 }
 .shoes-img3{ width: 100%; float: left; text-align: center; }
 
-.collection_text{ 
-    width: 100%; 
-    float: left; 
-    color: #ffffff; 
-    text-align: center; 
-    font-weight: bold; 
-    font-size: 40px; 
+.collection_text{
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
     background-color: #db5660;
-    padding: 30px 0px;  
+    padding: 30px 0px;
 }
 
 .sale_text{
@@ -521,7 +521,7 @@ body{
 	color: #ffffff;
 	background-color: #ff4e5b;
 	color: #ffffff;
-	font-size: 16pt;	
+	font-size: 16pt;
 	margin-top: 35px;
 }
 
@@ -571,11 +571,11 @@ body{
 .left_part ul{ margin: 0px; padding: 0px; }
 .left_part li{ float: left; padding-left: 10px; }
 .right_part{ width: 40%; float: left; }
-.shoes_price{ 
-	width: 100%; 
-	float: left; 
-	font-size: 22pt; 
-	color: #0f0d10; 
+.shoes_price{
+	width: 100%;
+	float: left;
+	font-size: 22pt;
+	color: #0f0d10;
 	text-align: right;
 }
 
@@ -590,7 +590,7 @@ body{
 	color: #ffffff;
 	background-color: #131111;
 	color: #ffffff;
-	font-size: 16pt;	
+	font-size: 16pt;
 	margin-top: 35px;
 }
 
@@ -642,7 +642,7 @@ body{
     color: #ffffff;
 }
 .ram{
-	width: 100%; 
+	width: 100%;
 	float: left;
 }
 

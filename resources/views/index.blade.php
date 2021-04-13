@@ -207,31 +207,7 @@
     <div class="layout_padding gallery_section">
         <div class="container">
             <div class="row">
-                @forelse ( App\Models\Product::inRandomOrder()->limit(6)->get() as $product )
-                    <div class="col-sm-4">
-                        <div class="best_shoes mh-50">
-                            <p class="best_text">{{$product->name}}</p>
-                            <div class="shoes_icon"><img src="{{url('storage/' . $product->image)}}"></div>
-                            <a type="button" href="" wire:click="addToCard({{$product->id}})" class="btn btn-success ml-48"> Add To Cart </a>
-                            <div class="star_text">
-                                <div class="left_part">
-                                    <ul>
-                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                        <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                    </ul>
-                                </div>
-                                <div class="right_part">
-                                    <div class="shoes_price">$$<span style="color: #ff4e5b;">{{$product->price}}</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-
-                @endforelse
+                @livewire('shopping-cart-component', [], key(1))
             </div>
         </div>
     </div>

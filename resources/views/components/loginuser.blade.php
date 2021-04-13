@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-2">
-                    <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+                    <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
                 </div>
                 <div class="col-sm-9">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">

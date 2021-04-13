@@ -39,7 +39,6 @@
     <div class="header_section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-1"></div>
                 <div class="col-sm-2">
                     <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
                 </div>
@@ -209,7 +208,9 @@
                                                         <a class="nav-item nav-link last" href="#"><img
                                                                 src="images/search_icon.png"></a>
                                                         <a class="nav-item nav-link last"
-                                                            href="{{ route('cart') }}"><img
+                                                            href="{{ route('cart') }}">
+                                                            {{(session()->has("cart") && session()->get("cart")->count()>0)? session()->get("cart")->count() : ""}}
+                                                            <img
                                                                 src="images/shop_icon.png"></a>
                                                     </div>
                                                 </nav>
@@ -319,44 +320,6 @@
                                             <script
                                                 src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js">
                                             </script>
-                                            <script>
-                                                $(document).ready(function() {
-                                                            $(".fancybox").fancybox({
-                                                                openEffect: "none",
-                                                                closeEffect: "none"
-                                                            });
-
-
-                                                            $('#myCarousel').carousel({
-                                                                interval: false
-                                                            });
-
-                                                            //scroll slides on swipe for touch enabled devices
-
-                                                            $("#myCarousel").on("touchstart", function(event) {
-
-                                                                var yClick = event.originalEvent.touches[0]
-                                                                    .pageY;
-                                                                $(this).one("touchmove", function(event) {
-
-                                                                    var yMove = event.originalEvent
-                                                                        .touches[0]
-                                                                        .pageY;
-                                                                    if (Math.floor(yClick - yMove) >
-                                                                        1) {
-                                                                        $(".carousel").carousel('next');
-                                                                    } else if (Math.floor(yClick -
-                                                                            yMove) < -1) {
-                                                                        $(".carousel").carousel('prev');
-                                                                    }
-                                                                });
-                                                                $(".carousel").on("touchend", function() {
-                                                                    $(this).off("touchmove");
-                                                                });
-                                                            });
-
-                                            </script>
                                             @livewireScripts
                             </body>
-
 </html>
