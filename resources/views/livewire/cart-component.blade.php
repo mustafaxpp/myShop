@@ -44,7 +44,7 @@
         </table>
         <div class="text-center w-full border-collapse p-6">
             <span class="text-lg">¡Your cart is empty!</span>
-        </div>
+        </div> 
     </div>
 </div>
 </div>

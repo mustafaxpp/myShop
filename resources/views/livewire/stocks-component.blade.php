@@ -23,7 +23,7 @@
                 </form>
             </div>
             <div class="col-md-8">
-                <h3 class="text-center">
+                <h3 class="text-center text-danger">
                     <strong>
                         All Stocks Table
                     </strong>

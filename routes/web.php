@@ -15,6 +15,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
+use App\Http\Livewire\CartComponent;
 
 /*
 |--------------------------------------------------------------------------
