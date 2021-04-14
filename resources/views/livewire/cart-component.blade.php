@@ -12,56 +12,46 @@
                 </tr>
             </thead>
             <tbody>
-                {{dd(session()->get("cart"))}}
-                @foreach (session()->get("cart")->toArray() as $product)
-
+                {{-- {{dd(session()->get("cart")->collect())}} --}}
+                @if (session()->get("cart"))
+                @forelse (session()->get("cart") as $product)
                 <tr>
                     <td>
                         <a href="#">
-                            {{-- <img class="img-fluid" src="{{ url('storage/' . $product->image) }}" /> --}}
+                            <img class="img-fluid" width="100" src="{{ url('storage/' . $product[0]->image) }}" />
                         </a>
                     </td>
                     <td>
-                        {{ $product->name }}
+                        {{ $product[0]->name }}
                     </td>
                     <td>
                     </td>
                     <td>
-                        {{ $product->amount }}
+                        {{ $product[0]->amount }}
                     </td>
                     <td>
                     </td>
                     <td>
-                        {{ $product->price }}
+                        {{ $product[0]->price }}
                     </td>
                     <td>
-                        <a wire:click="removeFromCart({{ $product->id }})">Remove</a>
+                        <a wire:click="removeFromCart({{ $product[0]->id }})">Remove</a>
                     </td>
                 </tr>
+                @empty
 
-                @endforeach
+                @endforelse
+                @else
+
+                @endif
             </tbody>
         </table>
         <div class="text-center w-full border-collapse p-6">
             <span class="text-lg">¡Your cart is empty!</span>
-        </div> 
+        </div>
     </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="section_footer">
     <div class="container">
         <div class="mail_section">

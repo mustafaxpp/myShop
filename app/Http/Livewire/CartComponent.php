@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-
+use Illuminate\Support\Collection;
 class CartComponent extends Component
 {
     use WithFileUploads;
