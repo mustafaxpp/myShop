@@ -12,43 +12,41 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- {{dd(session()->get("cart")->collect())}} --}}
+                {{-- {{dd(session()->get("cart"))}} --}}
                 @if (session()->get("cart"))
-                @forelse (session()->get("cart") as $product)
+                @forelse (session()->get("cart")->first() as $product)
                 <tr>
                     <td>
                         <a href="#">
-                            <img class="img-fluid" width="100" src="{{ url('storage/' . $product[0]->image) }}" />
+                            <img class="img-fluid" width="100" src="{{ url('storage/' . $product->image) }}" />
                         </a>
                     </td>
                     <td>
-                        {{ $product[0]->name }}
+                        {{ $product->name }}
+                    </td>
+                    <td >
+                        {{ $product->price }}
+                    </td>
+                    <td class="text-danger">
+                        {{ $product->price }}
                     </td>
                     <td>
+                        {{ $product->amount }}
                     </td>
                     <td>
-                        {{ $product[0]->amount }}
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        {{ $product[0]->price }}
-                    </td>
-                    <td>
-                        <a wire:click="removeFromCart({{ $product[0]->id }})">Remove</a>
+                        <button class="btn btn-sm btn-danger" title="Remove({{$product->name}})" type="button" wire:click="removeFromCart({{$product->id }})">Remove</button>
                     </td>
                 </tr>
                 @empty
 
                 @endforelse
                 @else
-
+                <div class="text-center w-full border-collapse p-6">
+                    <span class="text-lg">¡Your cart is empty!</span>
+                </div>
                 @endif
             </tbody>
         </table>
-        <div class="text-center w-full border-collapse p-6">
-            <span class="text-lg">¡Your cart is empty!</span>
-        </div>
     </div>
 </div>
 </div>
