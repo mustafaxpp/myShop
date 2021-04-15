@@ -36,7 +36,7 @@ class CartComponent extends Component
     public function add($product_id)
     {
         // dd($this->product_id);
-        $product = Product::find($product_id)->first();
+        $product = Product::find($product_id);
         if (session()->has('cart')) {
             $products =session()->get('cart');
             $products->push($product);
@@ -55,6 +55,3 @@ class CartComponent extends Component
 
     }
 }
-
-
-

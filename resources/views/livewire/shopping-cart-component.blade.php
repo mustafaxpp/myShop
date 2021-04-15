@@ -6,7 +6,7 @@
                             <div class="shoes_icon m-1"><img class="rounded" style="width: 330px;" src="{{url('storage/'.$product->image)}}"></div>
                             <div class="text-center">
                                 <div class="send_btn">
-                                    <a type="button" class="main_bt btn" wire:click="add({{$product->id}})" >Add To Cart</a>
+                                    <button type="button" class="main_bt btn" wire:click="add({{$product->id}})" >Add To Cart</button>
                                 </div>
                                 {{-- <button type="button"  class="text-center mt-12 text-white bg-gray-800  p-1  rounded-sm hover:bg-green-500">Add</button> --}}
                             </div>

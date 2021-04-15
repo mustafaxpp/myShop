@@ -209,9 +209,8 @@
                                                                 src="images/search_icon.png"></a>
                                                         <a class="nav-item nav-link last"
                                                             href="{{ route('cart') }}">
-                                                            {{(session()->has("cart") && session()->get("cart")->count()>0)? session()->get("cart")->count() : ""}}
-                                                            <img
-                                                                src="images/shop_icon.png"></a>
+
+                                                            <img class="inline-block" src="images/shop_icon.png"> @livewire('count-component', [], key(1))</a>
                                                     </div>
                                                 </nav>
                                             </div>

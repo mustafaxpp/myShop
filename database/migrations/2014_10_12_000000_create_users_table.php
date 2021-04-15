@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('fb_id')->nullable();
             $table->string('mobile')->nullable()->unique();
             $table->enum('role', ["admin", "customer"])->nullable()->default('customer');
             $table->timestamp('email_verified_at')->nullable();
