@@ -67,8 +67,8 @@
                         All Products Table
                     </strong>
                 </h3>
-                <table class="table table-light table-hover table-responsive">
-                    <thead>
+                <table class="table table-light table-hover text-center">
+                    <thead class="text-center">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
@@ -77,7 +77,7 @@
                             <th scope="col">Category_id</th>
                             <th scope="col">Brand_id</th>
                             <th scope="col">Stock_id</th>
-                            <th scope="col">&nbsp;</th>
+                            <th scope="col" colspan="2">&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,8 +87,8 @@
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td><img width="50" src="{{ url('storage/' . $product->image) }}" class="img-fluid"></td>
-                                <td>{{ $product->category_id }}</td>
-                                <td>{{ $product->brand_id }}</td>
+                                <td>{{ $product->category->name }}</td>
+                                <td>{{ $product->brand->name }}</td>
                                 <td>{{ $product->stock_id }}</td>
                                 <td><a class='btn btn-success btn-sm text-light' title='edit {{ $product->name }}'
                                         wire:click='edit({{ $product->id }})' role='button'>Edit</a></td>
@@ -97,7 +97,7 @@
                                 </td>
                             </tr>
                         @empty
-                        <td colspan="5" class="text-danger text-center"> There is no Product yet</td>
+                        <td colspan="8" class="text-danger text-center"> There is no Product yet</td>
 
                         @endforelse
 

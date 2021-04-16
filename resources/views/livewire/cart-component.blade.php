@@ -7,7 +7,7 @@
                     <th>product Name</th>
                     <th>Price</th>
                     <th class="text-center">Quantity</th>
-                    <th>Total</th>
+                    <th>$ Total</th>
                     <th>Remove</th>
                 </tr>
             </thead>
@@ -15,24 +15,24 @@
                 {{-- {{dd(session()->get("cart")->first())}} --}}
                 @if (session()->get("cart"))
                 @forelse (session()->get("cart") as $product)
-                {{dd($product)}}
+                {{-- {{dd($product)}} --}}
                 <tr>
                     <td>
                         <a href="#">
-                            {{-- <img class="img-fluid" width="100" src="{{ url('storage/' . $product->image) }}" /> --}}
+                            <img class="img-fluid" width="100" src="{{ url('storage/' . $product->image) }}" />
                         </a>
                     </td>
                     <td>
                         {{ $product->name }}
                     </td>
-                    <td >
-                        {{ $product->price }}
-                    </td>
                     <td class="text-danger">
                         {{ $product->price }}
                     </td>
+                    <td >
+                        {{ session()->get("cart")->count() }}
+                    </td>
                     <td>
-                        {{-- {{ $product->brand_id->brand->name }} --}}
+                        {{ session()->get("cart")->count() * $product->price }}
                     </td>
                     <td>
                         <button class="btn btn-sm btn-danger" title="Remove({{$product->name}})" type="button" wire:click="removeFromCart({{$product->id }})">Remove</button>
