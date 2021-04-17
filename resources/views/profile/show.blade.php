@@ -42,4 +42,4 @@
             @endif
         </div>
     </div>
-</x-appguest-layout>
+</x-app-layout>
