@@ -1,3 +1,3 @@
-<x-loginuser-layout>
+<x-guestuser-layout>
     @livewire('cart-component', [], key(1))
-</x-loginuser-layout>
+</x-guestuser-layout>

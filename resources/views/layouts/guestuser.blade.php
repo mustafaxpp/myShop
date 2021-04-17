@@ -205,6 +205,7 @@
                                                                 @endauth
                                                             @endif
                                                         </div>
+
                                                         <a class="nav-item nav-link last" href="#"><img
                                                                 src="images/search_icon.png"></a>
                                                         <a class="nav-item nav-link last"

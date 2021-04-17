@@ -207,7 +207,7 @@
     <div class="layout_padding gallery_section">
         <div class="container">
             <div class="row">
-                @livewire('shopping-cart-component', [], key(1))
+                @livewire('shopping-cart-component')
             </div>
         </div>
     </div>

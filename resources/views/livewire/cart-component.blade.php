@@ -7,12 +7,12 @@
                     <th>product Name</th>
                     <th>Price</th>
                     <th class="text-center">Quantity</th>
-                    <th>$ Total</th>
+                    <th>$Total</th>
                     <th>Remove</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- {{dd(session()->get("cart")->first())}} --}}
+                {{-- {{dd(session()->get("cart")->first()->id)}} --}}
                 @if (session()->get("cart"))
                 @forelse (session()->get("cart") as $product)
                 {{-- {{dd($product)}} --}}

@@ -6,6 +6,7 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Collection;
+use Cart;
 class CartComponent extends Component
 {
     use WithFileUploads;
@@ -33,25 +34,28 @@ class CartComponent extends Component
     // }
 
 
-    public function add($product_id)
-    {
-        // dd($this->product_id);
-        $product = Product::find($product_id);
-        if (session()->has('cart')) {
-            $products =session()->get('cart');
-            $products->push($product);
-            session()->put('cart', $products);
-        } else {
-            $products = collect();
-            $products->push($product);
-            session()->put('cart', $products);
-        }
-        //  return redirect()->back()->back();
-    }
-    public function removeFromCart($product_id){
+    // public function add(product $product_id)
+    // {
+    //     dd($this->product_id);
+    //     $product = Product::find($product_id);
+    //     if (session()->has('cart')) {
+    //         $products =session()->get('cart');
+    //         $products->push($product_id);
+    //         session()->put('cart', $products);
+    //     } else {
+    //         $products = collect();
+    //         $products->push($product_id);
+    //         session()->put('cart', $products);
+    //     }
+    //     //  return redirect()->back()->back();
+    // }
 
-        // dd($product_id);
-        Product::destroy($product_id);
+    public function removeFromCart(product $product)
+{
 
-    }
+    // session()->get('cart')::delete($product);
+    // session()->forget(['cart', 'product_id']);
+    session()->pull('cart', '$product');
+    return back();
+}
 }
