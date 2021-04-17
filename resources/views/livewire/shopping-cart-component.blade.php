@@ -1,5 +1,5 @@
 
-    @forelse ( App\Models\Product::inRandomOrder()->limit(6)->get() as $product )
+    @forelse ( App\Models\Product::all() as $product )
                     <div class="col-sm-4">
                         <div class="best_shoes text-center"  style="width: 350px;">
                             <p class="best_text text-uppercase"  wire:model="name">{{$product->name}}</p>

@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-
+use Illuminate\Support\Collection;
 class CartComponent extends Component
 {
     use WithFileUploads;
@@ -35,7 +35,7 @@ class CartComponent extends Component
 
     public function add($product_id)
     {
-        dd($this->product_id);
+        // dd($this->product_id);
         $product = Product::find($product_id);
         if (session()->has('cart')) {
             $products =session()->get('cart');
@@ -48,7 +48,10 @@ class CartComponent extends Component
         }
         //  return redirect()->back()->back();
     }
+    public function removeFromCart($product_id){
+
+        // dd($product_id);
+        Product::destroy($product_id);
+
+    }
 }
-
-
-

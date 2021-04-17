@@ -15,7 +15,10 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
+use App\Http\Controllers\SocialController;
 use App\Http\Livewire\CartComponent;
+use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Facades;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +85,16 @@ Route::prefix("/")->middleware([])->group(function () {
 
 
 });
+
+// Facebook Login
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
+// Route::get('/auth/redirect', function () {
+//     return Socialite::driver('facebook')->redirect()->name("facebook");
+// });
+// Route::get('/auth/callback', function () {
+//     $user = Socialite::driver('facebook')->user();
+
+    // $user->token
+// });

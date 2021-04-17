@@ -38,7 +38,7 @@ class ProductsComponent extends Component
     {
         $this->validate();
 
-        $photo = $this->image->store('photo_products', 'public');
+        $photo = $this->image->store('public/photo_products');
 
         if ($this->product_id)
             $product = Product::find($this->product_id);
