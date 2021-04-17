@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-2">
-                    <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+                    <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
                 </div>
                 <div class="col-sm-9">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -99,7 +99,7 @@
                                                 <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
                                             </div>
                                             <div class="col-sm-9">
-                                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <nav class="navbar navbar-expand-lg navbar-light bg-light text-sm">
                                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                                         data-target="#navbarNavAltMarkup"
                                                         aria-controls="navbarNavAltMarkup" aria-expanded="false"

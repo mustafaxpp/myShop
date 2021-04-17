@@ -18,7 +18,7 @@
                 </div>
 
                 <!-- Category_id input -->
-                <label class="form-label" for="name"> Category_id </label>
+                <label class="form-label" for="name"> Category  </label>
                 <select class="form-control rounded mb-2 " wire:model="category_id">
                     <option value="">Select Category</option>
                     @forelse ( \App\Models\Category::all() as $cat)
@@ -29,7 +29,7 @@
                 </select>
 
                 <!-- Brand_id input -->
-                <label class="form-label" for="name"> Brand_id </label>
+                <label class="form-label" for="name"> Brand </label>
                 <select class="form-control rounded mb-2 " wire:model="brand_id">
                     <option value="">Select Brand</option>
                     @forelse ( \App\Models\Brand::all() as $brand)
@@ -40,7 +40,7 @@
                 </select>
 
                 <!-- Stock_id input -->
-                <label class="form-label" for="name"> Stock_id </label>
+                <label class="form-label" for="name"> Stock  </label>
                 <select class="form-control rounded mb-2 col-form-label" wire:model="stock_id">
                     <option value="">Select Stock</option>
                     @forelse ( \App\Models\Stock::all() as $stock)

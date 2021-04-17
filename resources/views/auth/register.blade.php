@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestuser-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -8,6 +8,22 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+
+             {{-- Facebook And Google Social Media --}}
+        <div class="rounded-t mb-0 px-6 py-6">
+            <div class="text-center mb-3">
+                <h6 class="text-gray-600 text-sm font-bold">Register with</h6>
+            </div>
+            <div class="btn-wrapper text-center">
+                <a href="{{ url('auth/facebook') }}"  class="active:bg-blue-100 hover:bg-blue-300 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow inline-flex items-center font-bold text-xs" type="button" style="transition: all 0.15s ease 0s;"><img alt="..." class="w-5 mr-1" src="{{ asset('images/facebook.svg') }}"> Facebook </a>
+                <a href="{{ url('auth/google') }}" class="active:bg-gray-100 hover:bg-gray-300 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow inline-flex items-center font-bold text-xs" type="button" style="transition: all 0.15s ease 0s;"><img alt="..." class="w-5 mr-1" src="{{ asset('images/search.svg') }}">Google</a>
+            </div>
+            <hr class="mt-6 border-b-1 border-gray-400">
+            {{-- <div class="text-center mb-3">
+                <h6 class="text-gray-600 text-sm font-bold mt-6"> OR </h6>
+            </div> --}}
+        </div>
+        {{-- Facebook And Google Social Media --}}
 
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -57,4 +73,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-guestuser-layout>
