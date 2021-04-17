@@ -2,23 +2,24 @@
 
 use App\Models\Product;
 use App\Models\OrderProduct;
+use Laravel\Socialite\Facades;
 use App\Models\ShippingCompany;
+use App\Http\Livewire\CartComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
-use App\Http\Controllers\SocialController;
-use App\Http\Livewire\CartComponent;
-use Laravel\Socialite\Facades\Socialite;
-use Laravel\Socialite\Facades;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +90,10 @@ Route::prefix("/")->middleware([])->group(function () {
 // Facebook Login
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
+// Google Login
+Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [\App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
 
 // Route::get('/auth/redirect', function () {
 //     return Socialite::driver('facebook')->redirect()->name("facebook");
