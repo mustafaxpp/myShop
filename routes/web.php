@@ -44,7 +44,7 @@ use App\Http\Controllers\ShippingCompanyController;
 Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
 
     Route::get('/', function () {
-        return view('dashboard');
+        return view('indexdashboard');
     })->name('dashboard');
 
     Route::get('/user', function () {

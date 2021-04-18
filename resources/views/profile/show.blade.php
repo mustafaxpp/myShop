@@ -2,7 +2,11 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
+            <div class="">
+                <a class="d-flex justify-content-end" href="{{route("dashboard")}}">&larr; Back to Dashboard</a>
+            </div>
         </h2>
+
     </x-slot>
 
     <div>
@@ -42,4 +46,4 @@
             @endif
         </div>
     </div>
-</x-appguest-layout>
+</x-app-layout>
