@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class LoginUserLayout extends Component
+class NavUserLayout extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class LoginUserLayout extends Component
      */
     public function render()
     {
-        return view('components.loginuser');
+        return view('components.nav-user-layout');
     }
 }

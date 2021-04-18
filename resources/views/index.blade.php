@@ -1,4 +1,5 @@
 <x-guestuser-layout>
+    {{-- <x-navuser-layout> --}}
     <div class="banner_section">
         <div class="container-fluid">
             <section class="slide-wrapper">
@@ -11,31 +12,16 @@
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                             <li data-target="#myCarousel" data-slide-to="3"></li>
                         </ol>
-
-                        <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
                                     <div class="col-sm-2 padding_0">
-
-                                        {{-- @if (Route::has('login') & (auth()->user()->role == 'admin'))
-                                            @auth
-                                                <a href="{{ url('/dashboard') }}" class="nav-item nav-link">Dashboard</a>
-                                            @else
-                                                <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
-
-                                                @if (Route::has('register'))
-                                                    <a href="{{ route('register') }}"
-                                                        class="nav-item nav-link">Register</a>
-                                                @endif
-                                            @endauth
-                                        @endif --}}
                                         <div class="page_no">0/2</div>
                                         <p class="mens_taital_2">Men Shoes</p>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="banner_taital">
-                                            <h1 class="banner_text">New Running Shoes </h1>
+                                            <h1 class="new_text">New Running Shoes </h1>
                                             <h1 class="mens_text "><strong>Men's Like Plex</strong></h1>
                                             <p class="lorem_text mb-3">ipsum dolor sit amet, consectetur adipiscing
                                                 elit, sed
@@ -106,7 +92,8 @@
                                         <div class="banner_taital">
                                             <h1 class="banner_text">New Running Shoes </h1>
                                             <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit,
+                                                sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             <button class="buy_bt">Buy Now</button>
                                             <button class="more_bt">See More</button>
@@ -123,12 +110,10 @@
             </section>
         </div>
     </div>
-    </div>
     <!-- header section end -->
-    <!-- new collection section start -->
     <div class="layout_padding collection_section">
         <div class="container">
-            <h1 class="new_text"><strong>New Collection</strong></h1>
+            <h1 class="new_text" style="margin-top:40px ;"><strong>New Collection</strong></h1>
             <p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
             <div class="collection_section_2">
@@ -203,6 +188,7 @@
         </div>
     </div>
     <!-- new collection section end -->
+
     <!-- New Arrivals section start -->
     <div class="layout_padding gallery_section">
         <div class="container">
@@ -323,4 +309,6 @@
             </div>
         </div>
     </div>
-    </x-guest-layout>
+    <!-- contact section end -->
+    {{-- </x-navuser-layout> --}}
+</x-guestuser-layout>

@@ -71,10 +71,6 @@ Route::prefix("/")->middleware([])->group(function () {
         return view('shoes');
     })->name('shoes');
 
-    Route::get('/racingboots', function () {
-        return view('racingboots');
-    })->name('racingboots');
-
     Route::get('/contact', function () {
         return view('contact');
     })->name('contact');
