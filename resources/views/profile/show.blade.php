@@ -2,9 +2,15 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
+            @if (Auth::user()->role == "admin")
             <div class="">
                 <a class="d-flex justify-content-end" href="{{route("dashboard")}}">&larr; Back to Dashboard</a>
             </div>
+            @else
+            <div class="">
+                <a class="d-flex justify-content-end" href="{{route("index")}}">&larr; Back to Website </a>
+            </div>
+            @endif
         </h2>
 
     </x-slot>
