@@ -1,4 +1,4 @@
-@forelse ( App\Models\Product::inRandomOrder(6) as $product )
+@forelse ( App\Models\Product::all() as $product )
     <div class="col-sm-4">
         <div class="best_shoes">
             <p class="best_text">{{ $product->name }}</p>
