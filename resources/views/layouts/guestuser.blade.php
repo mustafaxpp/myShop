@@ -40,10 +40,10 @@
      <div class="header_section">
          <div class="container">
              <div class="row">
-                 <div class="col-sm">
-                     <div class="logo"><a href="/"><img src="images/logo.png"></a></div>
+                 <div class="col-lg-1">
+                     <div class="logo img-fluid"><a href="{{ route('index') }}"><img src="images/logo.png"></a></div>
                  </div>
-                 <div class="col-sm-11">
+                 <div class="col-lg-11">
                      <nav class="navbar navbar-expand-lg navbar-light bg-light">
                          <div class="container-fluid">
                              <a class="navbar-brand" href="#">Navbar</a>
@@ -68,37 +68,63 @@
                                      </li>
                                      @if (Route::has('login'))
                                          @auth
-                                             <li class="nav-item dropdown" role="button">
-                                                 <a class="nav-link dropdown-toggle" id="navbarNavAltMarkup"
-                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <li class="nav-item dropdown">
+                                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                      {{ Auth::user()->name }}
                                                  </a>
-                                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                     <a class="dropdown-item"
+                                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                     <a class="nav-link text-dark dropdown-item"
                                                          href="{{ route('profile.show') }}">profile</a>
                                                      <form method="POST" action="{{ route('logout') }}">
                                                          @csrf
                                                          <div class="dropdown-divider"></div>
-                                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">Log Out</a>
+                                                         <a class="nav-link text-dark dropdown-item"
+                                                             href="{{ route('logout') }}" onclick="event.preventDefault();
+                    this.closest('form').submit();">Log
+                                                             Out</a>
                                                      </form>
                                                  </div>
                                              </li>
                                          @else
-                                                     <a href="{{ route('register') }}"
-                                                         class="nav-item nav-link">Register</a>
-                                                     <a href="{{ route('login') }}" class="nav-item nav-link">Log in</a>
+                                             <li class="nav-item dropdown">
+                                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                     Sign In
+                                                 </a>
+                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                     <li> <a href="{{ route('register') }}"
+                                                             class="nav-link text-dark dropdown-item">Register</a>
+                                                     </li>
+                                                     <li><a href="{{ route('login') }}"
+                                                             class="nav-link text-dark dropdown-item">Log in</a></li>
+                                                 </ul>
+                                             </li>
                                          @endauth
                                      @endif
 
-                                     <a class="nav-item nav-link last" href="#"><img src="images/search_icon.png"></a>
-                                     <a class="nav-item nav-link last" href="{{ route('cart') }}">
-                                         <img class="inline-block" src="images/shop_icon.png">
-                                         {{-- <a class="nav-item nav-link last" href="{{ route('cart') }}">
-                                             <img class="inline-block" src="images/shop_icon.png"> --}}
-
-                                         @livewire('count-component', [], key(1))</a>
-                                 </ul>
+                                     <a class="nav-item nav-link last" href="#"><img height="40" width="30"
+                                             src="images/search_icon.png"></a>
+                                     <a href="{{ route('cart') }}" title=""><svg id="Layer_3"
+                                             class="ml-3 img-responsive" height="57" viewBox="0 0 64 64" width="40"
+                                             xmlns="http://www.w3.org/2000/svg" data-name="Layer 3">
+                                             <path
+                                                 d="m42 2a11 11 0 0 0 -2.1 21.794l2.1 4.206 2.1-4.206a11 11 0 0 0 -2.1-21.794zm4.332 13.39-4.332 3.61-4.332-3.61a4.637 4.637 0 0 1 -1.668-3.562 2.828 2.828 0 0 1 4.828-2l1.172 1.172 1.172-1.172a2.828 2.828 0 0 1 4.828 2 4.637 4.637 0 0 1 -1.668 3.562z"
+                                                 fill="#f4b2b0" />
+                                             <g fill="#b3404a">
+                                                 <path
+                                                     d="m60 47h-34.413a1 1 0 0 1 -.974-.773l-5.913-25.363a4.979 4.979 0 0 0 -4.874-3.864h-9.826a3 3 0 0 0 0 6h8.413a1 1 0 0 1 .974.772l5.557 23.819a6.972 6.972 0 0 0 6.817 5.409h1.779a6 6 0 1 0 8.92 0h11.08a6 6 0 1 0 8.92 0h3.54a3 3 0 0 0 0-6zm-24 10a4 4 0 1 1 -4-4 4 4 0 0 1 4 4zm20 0a4 4 0 1 1 -4-4 4 4 0 0 1 4 4zm4-6h-34.239a4.979 4.979 0 0 1 -4.869-3.864l-5.558-23.818a2.987 2.987 0 0 0 -2.921-2.318h-8.413a1 1 0 0 1 0-2h9.826a2.989 2.989 0 0 1 2.922 2.318l5.918 25.364a2.987 2.987 0 0 0 2.921 2.318h34.413a1 1 0 0 1 0 2z" />
+                                                 <path
+                                                     d="m21.218 21.376a1 1 0 0 0 -.193.846l5 22a1 1 0 0 0 .975.778h30a1 1 0 0 0 .975-.778l5-22a1 1 0 0 0 -.975-1.222h-11.072a12 12 0 1 0 -17.855 0h-11.073a1 1 0 0 0 -.782.376zm18 3.294 1.664 3.33h-7.055l-.681-5h2.235a11.9 11.9 0 0 0 3.836 1.67zm9.402-1.67h2.235l-.682 5h-7.055l1.665-3.33a11.913 11.913 0 0 0 3.837-1.67zm.462 13h-6.082v-6h6.9zm2.836-6h7.238l-1.363 6h-6.693zm-8.918 8h5.809l-.682 5h-5.127zm-2 5h-5.127l-.682-5h5.809zm0-13v6h-6.082l-.818-6zm-8.1 6h-6.693l-1.363-6h7.238zm-6.238 2h6.511l.682 5h-6.055zm29.538 5h-6.055l.682-5h6.511zm3.409-15h-7.42l.682-5h7.874zm-17.609-25a10 10 0 0 1 1.913 19.812 1 1 0 0 0 -.7.535l-1.213 2.417-1.208-2.417a1 1 0 0 0 -.7-.535 10 10 0 0 1 1.908-19.812zm-10.873 20 .682 5h-7.42l-1.136-5z" />
+                                                 <circle cx="32" cy="57" r="2" />
+                                                 <circle cx="52" cy="57" r="2" />
+                                                 <path
+                                                     d="m37.028 16.158 4x`.332 3.61a1 1 0 0 0 1.28 0l4.332-3.61a5.62 5.62 0 0 0 2.028-4.329 3.828 3.828 0 0 0 -6.536-2.707l-.464.464-.464-.464a3.828 3.828 0 0 0 -6.536 2.707 5.62 5.62 0 0 0 2.028 4.329zm1.801-6.158a1.816 1.816 0 0 1 1.293.536l1.171 1.171a1 1 0 0 0 1.414 0l1.171-1.171a1.829 1.829 0 0 1 3.122 1.293 3.625 3.625 0 0 1 -1.309 2.793l-3.691 3.078-3.691-3.076a3.625 3.625 0 0 1 -1.309-2.795 1.83 1.83 0 0 1 1.829-1.829z" />
+                                             </g>
+                                         </svg>@livewire('count-component', [], key(1))</a>
+                                     <a href="{{ route('cart') }}"><img class="inline-block ml-3"
+                                             style="margin-top:8px;" src="images/add-to-favorites.png" height="57"
+                                             width="40"></a>
                              </div>
                          </div>
                      </nav>
@@ -183,6 +209,8 @@
                  </div>
              </div>
      </div>
+
+
      <!-- section footer end -->
      <div class="copyright">2021
 

@@ -1,5 +1,5 @@
 @forelse ( App\Models\Product::all() as $product )
-    <div class="col-sm-4">
+    <div class="col-4">
         <div class="best_shoes">
             <p class="best_text">{{ $product->name }}</p>
             <div class="shoes_icon m-1"><img class="rounded" src="{{ url('storage/' . $product->image) }}"></div>
@@ -22,11 +22,7 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
 @empty
 
 @endforelse
