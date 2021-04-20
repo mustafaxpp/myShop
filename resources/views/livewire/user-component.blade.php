@@ -1,6 +1,7 @@
 <div>
     <div class="container mt-5">
         <div class="row">
+<<<<<<< HEAD
             {{-- <div class="col-md-4">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <!-- Name input -->
@@ -38,11 +39,15 @@
             </div> --}}
             <div class="col-md-8">
                 <h3 class="text-center">
+=======
+            <div class="col-md-8 m-auto">
+                <h3 class="text-center text-danger">
+>>>>>>> 8f73804826ba0a7c98ad1c8fdefd521aaa518172
                     <strong>
                            All Users Table
                     </strong>
                 </h3>
-                <table class="table table-light table-hover text-center">
+                <table class="table table-hover text-center">
                     <thead>
                       <tr>
                         <th scope="col">#</th>

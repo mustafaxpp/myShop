@@ -44,7 +44,7 @@ use App\Http\Controllers\ShippingCompanyController;
 Route::prefix("/dashboard")->middleware(['check_role'])->group(function () {
 
     Route::get('/', function () {
-        return view('dashboard');
+        return view('indexdashboard');
     })->name('dashboard');
 
     Route::get('/user', function () {
@@ -70,10 +70,6 @@ Route::prefix("/")->middleware([])->group(function () {
     Route::get('/shoes', function () {
         return view('shoes');
     })->name('shoes');
-
-    Route::get('/racingboots', function () {
-        return view('racingboots');
-    })->name('racingboots');
 
     Route::get('/contact', function () {
         return view('contact');

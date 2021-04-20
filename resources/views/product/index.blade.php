@@ -1,10 +1,6 @@
+@extends("masterdash")
 
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl  text-red-500 leading-tight">
-            {{ __('messages.Products') }}
-        </h2>
-    </x-slot>
+@section("content")
+@livewire('products-component', [], key(1))
+@endsection
 
-    @livewire('products-component', [], key(1))
-</x-app-layout>
