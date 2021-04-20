@@ -36,8 +36,7 @@
 
 
             </div> --}}
-
-            <div class="col-md-8 m-auto">
+            <div class="col-md-8">
                 <h3 class="text-center">
                     <strong>
                            All Users Table

@@ -7,7 +7,7 @@
             <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-jet-application-mark class="block h-9" />
                     </a>
                 </div>
                 @if (Auth::user()->role == "admin")
@@ -20,67 +20,61 @@
                 </div> --}}
 
                 {{-- Users --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-2 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
                         {{ __('messages.Users') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Brands --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('brand') }}" :active="request()->routeIs('brand')">
                         {{ __('messages.Brands') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Stocks --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('stock') }}" :active="request()->routeIs('stock')">
                         {{ __('messages.Stocks') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Categories --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('category') }}" :active="request()->routeIs('category')">
                         {{ __('messages.Categories') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Supplier --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('supplier') }}" :active="request()->routeIs('supplier')">
                         {{ __('messages.Suppliers') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Shipping Companies --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('shipping') }}" :active="request()->routeIs('shipping')">
                         {{ __('messages.Shipping') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Payment Method --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('payment') }}" :active="request()->routeIs('payment')">
                         {{ __('messages.Payment') }}
                     </x-jet-nav-link>
                 </div>
                     {{-- Shipping Companies --}}
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('shipping') }}" :active="request()->routeIs('shipping')">
                             {{ __('messages.Shipping') }}
                         </x-jet-nav-link>
                     </div>
-                    {{-- Payment Method --}}
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-5 sm:flex">
-                        <x-jet-nav-link href="{{ route('payment') }}" :active="request()->routeIs('payment')">
-                            {{ __('messages.Payment') }}
-                        </x-jet-nav-link>
-                    </div>
                 {{-- Products --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-5 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-5 sm:flex">
                     <x-jet-nav-link href="{{ route('product') }}" :active="request()->routeIs('product')">
                         {{ __('messages.Products') }}
                     </x-jet-nav-link>
                 </div>
                 {{-- Orders --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-5 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-5 sm:flex">
                     <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
                         {{ __('messages.Orders') }}
                     </x-jet-nav-link>
@@ -96,7 +90,7 @@
 
                 @endif
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex text-xs sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
@@ -120,7 +114,7 @@
                             <x-slot name="content">
                                 <div class="w-60">
                                     <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                    <div class="block px-4 py-4 text-xs text-gray-400">
                                         {{ __('Manage Team') }}
                                     </div>
 
@@ -166,7 +160,7 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-xs text-blue-400 leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-blue-700 focus:outline-none transition">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
