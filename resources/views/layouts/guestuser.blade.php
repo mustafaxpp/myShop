@@ -46,7 +46,7 @@
                  <div class="col-lg-11">
                      <nav class="navbar navbar-expand-lg navbar-light bg-light">
                          <div class="container-fluid">
-                             <a class="navbar-brand" href="#">Navbar</a>
+                             {{-- <a class="navbar-brand" href="#">Navbar</a> --}}
                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                  data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
                                  aria-expanded="false" aria-label="Toggle navigation">
@@ -81,8 +81,7 @@
                                                          <div class="dropdown-divider"></div>
                                                          <a class="nav-link text-dark dropdown-item"
                                                              href="{{ route('logout') }}" onclick="event.preventDefault();
-                    this.closest('form').submit();">Log
-                                                             Out</a>
+                                                            this.closest('form').submit();">Log Out</a>
                                                      </form>
                                                  </div>
                                              </li>
@@ -105,6 +104,7 @@
 
                                      <a class="nav-item nav-link last" href="#"><img height="40" width="30"
                                              src="images/search_icon.png"></a>
+                                             @livewire('count-component', [], key(1))
                                      <a href="{{ route('cart') }}" title=""><svg id="Layer_3"
                                              class="ml-3 img-responsive" height="57" viewBox="0 0 64 64" width="40"
                                              xmlns="http://www.w3.org/2000/svg" data-name="Layer 3">
@@ -121,7 +121,9 @@
                                                  <path
                                                      d="m37.028 16.158 4x`.332 3.61a1 1 0 0 0 1.28 0l4.332-3.61a5.62 5.62 0 0 0 2.028-4.329 3.828 3.828 0 0 0 -6.536-2.707l-.464.464-.464-.464a3.828 3.828 0 0 0 -6.536 2.707 5.62 5.62 0 0 0 2.028 4.329zm1.801-6.158a1.816 1.816 0 0 1 1.293.536l1.171 1.171a1 1 0 0 0 1.414 0l1.171-1.171a1.829 1.829 0 0 1 3.122 1.293 3.625 3.625 0 0 1 -1.309 2.793l-3.691 3.078-3.691-3.076a3.625 3.625 0 0 1 -1.309-2.795 1.83 1.83 0 0 1 1.829-1.829z" />
                                              </g>
-                                         </svg>@livewire('count-component', [], key(1))</a>
+                                         </svg>
+
+                                        </a>
                                      <a href="{{ route('cart') }}"><img class="inline-block ml-3"
                                              style="margin-top:8px;" src="images/add-to-favorites.png" height="57"
                                              width="40"></a>
@@ -131,7 +133,7 @@
                  </div>
              </div>
          </div>
-         < {{ $slot }} <!-- section footer start -->
+          {{ $slot }} <!-- section footer start -->
              <div class="section_footer">
                  <div class="container">
                      <div class="mail_section">

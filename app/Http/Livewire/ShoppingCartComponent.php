@@ -15,7 +15,9 @@ class ShoppingCartComponent extends Component
 
     public function render()
     {
-        return view('livewire.shopping-cart-component');
+        $products = Product::all();
+        // return view('livewire.shopping-cart-component' , ["products"=>$products]);
+        return view('livewire.shopping-cart-component' , ["products"=>$products]);
     }
 
     public function updated($propertyName)
@@ -41,9 +43,15 @@ class ShoppingCartComponent extends Component
 public function add(product $product_id)
 {
     // dd($product_id);
+    // dd(session()->get('cart')->first()->id);
     // $product = Product::find($product_id);
     // dd($product->id);
-       if(session()->has('cart')){
+    // if (session()->get('cart')->first()->id == $product_id){
+
+    // }else {
+
+    // }
+    if(session()->has('cart')){
         $products =session()->get('cart');
         $products->push($product_id);
        session()->put('cart' , $products);
@@ -53,6 +61,7 @@ public function add(product $product_id)
        $products->push($product_id);
        session()->put('cart' , $products);
        }
+
     //    dd($products);
     //  return redirect()->back()->back();
 }

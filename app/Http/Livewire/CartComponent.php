@@ -50,12 +50,16 @@ class CartComponent extends Component
     //     //  return redirect()->back()->back();
     // }
 
-    public function removeFromCart(product $product)
+    public function removeFromCart(product $product_id)
 {
 
-    // session()->get('cart')::delete($product);
+    // dd($product_id);
+    // session()->get('cart')->delete($product_id);
+    // session()->get('cart')->delete($product_id);
     // session()->forget(['cart', 'product_id']);
-    session()->pull('cart', '$product');
+    // $product = Product::find($product_id);
+    // unset($product[$product_id]);
+    session()->pull('cart' , 'product');
     return back();
 }
 }

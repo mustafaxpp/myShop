@@ -190,9 +190,8 @@
 
     <!-- New Arrivals section start -->
     <div class="layout_padding gallery_section">
-        <div class="container">
-            <div class="row">
-                @livewire('shopping-cart-component')
+        
+                    @livewire("shopping-cart-component")
             </div>
         </div>
     </div>
