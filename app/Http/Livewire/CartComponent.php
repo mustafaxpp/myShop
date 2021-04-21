@@ -59,7 +59,15 @@ class CartComponent extends Component
     // session()->forget(['cart', 'product_id']);
     // $product = Product::find($product_id);
     // unset($product[$product_id]);
-    session()->pull('cart' , 'product');
-    return back();
+    // session()->pull('cart');
+    // return back();
+
+
+    $products = session()->get('cart');
+    $key = $products->search(function($product_id) {
+        return $product_id;
+    });
+    
+    $products->pull($key);
 }
 }
