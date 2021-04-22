@@ -14,8 +14,8 @@ class StockSeeder extends Seeder
      */
     public function run()
     {
-        // $stock = new Stock();
-        // $stock->name = "Nike";
-        // $stock->save();
+        $stock = new Stock();
+        $stock->name = "Nike";
+        $stock->save();
     }
 }

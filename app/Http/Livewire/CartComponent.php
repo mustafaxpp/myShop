@@ -10,8 +10,9 @@ use Cart;
 class CartComponent extends Component
 {
     use WithFileUploads;
-    public $product;
-    public $name;
+
+    // public $product;
+    // public $name;
 
 
     public function render()
@@ -50,7 +51,7 @@ class CartComponent extends Component
     //     //  return redirect()->back()->back();
     // }
 
-    public function removeFromCart(product $product_id)
+public function removeFromCart( $product_id)
 {
 
     // dd($product_id);
@@ -62,12 +63,22 @@ class CartComponent extends Component
     // session()->pull('cart');
     // return back();
 
-
+//dd($product_id);
     $products = session()->get('cart');
-    $key = $products->search(function($product_id) {
-        return $product_id;
-    });
-    
-    $products->pull($key);
+
+    $prod_key =null;
+    foreach($products as $key => $prod){
+        if ($prod->id == $product_id) {
+            $prod_key =$key ;
+            break;
+        }
+    }
+    if ($prod_key>=0){
+        $products->forget($prod_key);
+    }
+
+    // dd($products);
+    session()->put('cart' ,$products);
+    $this->emit("refreshCountComponent");
 }
 }

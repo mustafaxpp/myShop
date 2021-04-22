@@ -21,12 +21,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            // CategorySeeder::class,
-            // StockSeeder::class,
+            CategorySeeder::class,
+            StockSeeder::class,
         ]);
 
-        // Category::factory(10)->create();
-        // Product::factory(10)->create();
-        // Brand::factory(10)->create();
+       // Category::factory(10)->create();
+        Brand::factory(10)->create();
+
+        Product::factory(10)->create();
     }
 }

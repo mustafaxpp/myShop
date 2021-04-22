@@ -62,6 +62,7 @@ public function add(product $product_id)
        session()->put('cart' , $products);
        }
 
+       $this->emit("refreshCountComponent");
     //    dd($products);
     //  return redirect()->back()->back();
 }

@@ -25,11 +25,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            // "price"       => $this->faker->randomFloat(2, 1, 100),
-            // "image"       => $this->faker->sentence(),
-            // "category_id" => Category::inRandomOrder()->first()->id,
-            // "brand_id"    => Brand::inRandomOrder()->first()->id,
-            // "stock_id"    => Stock::inRandomOrder()->first()->id,
+            "price"       => $this->faker->randomFloat(2, 1, 100),
+            "name"       => $this->faker->sentence,
+            "category_id" => Category::inRandomOrder()->first()->id,
+            "brand_id"    => Brand::inRandomOrder()->first()->id,
+            "stock_id"    => Stock::inRandomOrder()->first()->id,
         ];
     }
 }
