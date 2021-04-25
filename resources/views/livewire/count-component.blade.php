@@ -1,3 +1,3 @@
 <div>
-    {{(session()->has("cart") && session()->get("cart")->count()>0)? session()->get("cart")->count() : ""}}
+    {{(session()->has("cart") && count(session()->get("cart"))>0)? count(session()->get("cart")) : ""}}
 </div>

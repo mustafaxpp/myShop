@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Collection;
 use Cart;
+
 class CartComponent extends Component
 {
     use WithFileUploads;
@@ -51,34 +52,42 @@ class CartComponent extends Component
     //     //  return redirect()->back()->back();
     // }
 
-public function removeFromCart( $product_id)
-{
+    public function removeFromCart($product_id)
+    {
 
-    // dd($product_id);
-    // session()->get('cart')->delete($product_id);
-    // session()->get('cart')->delete($product_id);
-    // session()->forget(['cart', 'product_id']);
-    // $product = Product::find($product_id);
-    // unset($product[$product_id]);
-    // session()->pull('cart');
-    // return back();
+        // dd($product_id);
+        // session()->get('cart')->delete($product_id);
+        // session()->get('cart')->delete($product_id);
+        // session()->forget(['cart', 'product_id']);
+        // $product = Product::find($product_id);
+        // unset($product[$product_id]);
+        // session()->pull('cart');
+        // return back();
 
-//dd($product_id);
-    $products = session()->get('cart');
+        //dd($product_id);
+        // $products = session()->get('cart');
 
-    $prod_key =null;
-    foreach($products as $key => $prod){
-        if ($prod->id == $product_id) {
-            $prod_key =$key ;
-            break;
+        // $prod_key =null;
+        // foreach($products as $key => $prod){
+        //     if ($prod->id == $product_id) {
+        //         $prod_key =$key ;
+        //         break;
+        //     }
+        // }
+        // if ($prod_key>=0){
+        //     $products->forget($prod_key);
+        // }
+        if (session()->has('cart')) {
+            $products = session()->get('cart');
+          //  dd( $products);
+            if (!empty($products[$product_id]) && $products[$product_id] >1){
+                $products[$product_id] -=1;
+            }elseif(!empty($products[$product_id]) && $products[$product_id] ==1){
+                unset($products[$product_id]);
+            }
+            // dd($products);
+            session()->put('cart', $products);
+            $this->emit("refreshCountComponent");
         }
     }
-    if ($prod_key>=0){
-        $products->forget($prod_key);
-    }
-
-    // dd($products);
-    session()->put('cart' ,$products);
-    $this->emit("refreshCountComponent");
-}
 }

@@ -40,20 +40,36 @@ class ShoppingCartComponent extends Component
     // }
 
 
-public function add(product $id)
+public function add( $id)
 {
+
+    // with out Quntity
+    // if(session()->has('cart')){
+    //     $products =session()->get('cart');
+    //     $products->push($id);
+    //     session()->put('cart' , $products);
+    //    }
+    //    else{
+    //    $products = collect();
+    //    $products->push($id);
+    //    session()->put('cart' , $products);
+    //    }
+
     if(session()->has('cart')){
         $products =session()->get('cart');
-        $products->push($id);
+        if (empty($products[$id])){
+            $products[$id] = 1;
+        }else{
+            $products[$id] += 1;
+        }
         session()->put('cart' , $products);
        }
        else{
-       $products = collect();
-       $products->push($id);
+       $products[$id] = 1;
        session()->put('cart' , $products);
        }
        $this->emit("refreshCountComponent");
-       
+
     // $product = Product::find($id);
     // $cart = session()->get('cart');
     // if(session()->has('cart')) {

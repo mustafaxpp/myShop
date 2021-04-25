@@ -1,5 +1,5 @@
 <div>
-    <div class="table-main  table-bordered table-dark mt-20">
+    <div class="mt-20 table-main table-bordered table-dark">
         <table class="table">
             <thead>
                 <tr>
@@ -14,8 +14,10 @@
             <tbody>
                 {{-- {{dd(session()->get("cart")->first()->id)}} --}}
                 @if (session()->get("cart"))
-                @forelse (session()->get("cart") as $product)
-                {{-- {{dd($product)}} --}}
+                @forelse (session()->get("cart") as $product_id =>$qty)
+                    @php
+                        $product =  \App\Models\Product::findOrFail($product_id );
+                    @endphp
                 <tr>
                     <td>
                         <a href="#">
@@ -29,10 +31,10 @@
                         {{ $product->price }}
                     </td>
                     <td >
-                        {{ session()->get("cart")->count() }}
+                        {{ $qty }}
                     </td>
                     <td>
-                        {{ session()->get("cart")->count() * $product->price }}
+                        {{ $qty * $product->price }}
                     </td>
                     <td>
                         <button class="btn btn-sm btn-danger" title="Remove({{$product->name}})" type="button" wire:click="removeFromCart({{$product->id }})">Remove</button>
@@ -42,7 +44,7 @@
 
                 @endforelse
                 @else
-                <div class="text-center w-full border-collapse p-6">
+                <div class="w-full p-6 text-center border-collapse">
                     <span class="text-lg">¡Your cart is empty!</span>
                 </div>
                 @endif
