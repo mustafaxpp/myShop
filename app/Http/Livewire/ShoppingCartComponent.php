@@ -40,31 +40,51 @@ class ShoppingCartComponent extends Component
     // }
 
 
-public function add(product $product_id)
+public function add(product $id)
 {
-    // dd($product_id);
-    // dd(session()->get('cart')->first()->id);
-    // $product = Product::find($product_id);
-    // dd($product->id);
-    // if (session()->get('cart')->first()->id == $product_id){
-
-    // }else {
-
-    // }
     if(session()->has('cart')){
         $products =session()->get('cart');
-        $products->push($product_id);
-       session()->put('cart' , $products);
+        $products->push($id);
+        session()->put('cart' , $products);
        }
        else{
-        $products = collect();
-       $products->push($product_id);
+       $products = collect();
+       $products->push($id);
        session()->put('cart' , $products);
        }
-
        $this->emit("refreshCountComponent");
-    //    dd($products);
-    //  return redirect()->back()->back();
+       
+    // $product = Product::find($id);
+    // $cart = session()->get('cart');
+    // if(session()->has('cart')) {
+    //     $cart[$id] = [
+    //         'id'=>$product->id,
+    //         "name" => $product->name,
+    //         "qty" => 0,
+    //         "price" => $product->price,
+    //         "image" => $product->image
+    //     ];
+    //     foreach ($cart as $id => $val) {
+    //         // dd($val['id']);
+    //         if ($id == $val['id']) {
+    //            $cart[$id]['qty'] +=1;
+    //         }
+    //     }
+    //     // $cart->push($cart[$id]);
+    //     session()->put('cart', $cart);
+    // }
+    // else{
+    //     $cart = [
+    //         $id => [
+    //             'id'=>$product->id,
+    //             "name" => $product->name,
+    //             "qty" => 1,
+    //             "price" => $product->price,
+    //             "image" => $product->image
+    //         ]
+    // ];
+    // }
+    // session()->put('cart', $cart);
 }
 
 
