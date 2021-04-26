@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -17,8 +18,13 @@ class CheckRole
     public function handle(Request $request, Closure $next)
     {
 
-        if (auth()->user() && auth()->user()->role == "admin")
-            return $next($request);
+        if ( Auth::user() ){
+            if( Auth::user()->role == "admin" ){
+                return $next($request);
+            }else{
+                return redirect()->route("index");
+            }
+        }
         else {
             return redirect()->route("login");
         }
