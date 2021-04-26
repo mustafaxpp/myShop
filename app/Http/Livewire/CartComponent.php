@@ -12,7 +12,6 @@ class CartComponent extends Component
 {
     use WithFileUploads;
 
-    // public $product;
     // public $name;
 
 
@@ -90,4 +89,23 @@ class CartComponent extends Component
             $this->emit("refreshCountComponent");
         }
     }
+
+    public function add($id)
+    {
+        if(session()->has('cart')){
+            $products =session()->get('cart');
+            if (empty($products[$id])){
+                $products[$id] = 1;
+            }else{
+                $products[$id] += 1;
+            }
+            session()->put('cart' , $products);
+           }
+           else{
+           $products[$id] = 1;
+           session()->put('cart' , $products);
+        }
+        $this->emit("refreshCountComponent");
+        }
+
 }

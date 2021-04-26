@@ -20,6 +20,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ShippingCompanyController;
+use App\Http\Middleware\CheckLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +79,7 @@ Route::prefix("/")->middleware([])->group(function () {
     Route::get('/collection', function () {
         return view('collection');
     })->name('collection');
-    Route::get('/cart', [CartController::class , "index"])->name('cart');
+    Route::get('/cart', [CartController::class , "index"])->name('cart')->middleware(CheckLogin::class);
 
 
 });
