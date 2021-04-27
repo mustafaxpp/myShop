@@ -9,6 +9,9 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="items">
+                            @php
+                                                            $total = 0 ;
+                            @endphp
                             @if (session()->get("cart"))
                             @forelse (session()->get("cart") as $product_id =>$qty)
                             @php
@@ -55,7 +58,11 @@
 
                                                 </div>
                                                 <div class="col-md-3 price">
-                                                    <span>${{ $qty * $product->price }}</span>
+                                                    <span>${{$product->price * $qty}}
+                                                        @php
+                                                            $total = $total +=  $product->price * $qty;
+                                                        @endphp
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,16 +72,15 @@
                             @empty
 
                             @endforelse
-
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="summary">
                             <h3>Summary</h3>
-                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">$ {{$product->price * $qty}}</span></div>
+                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">$ {{$total}}</span></div>
                             <div class="summary-item"><span class="text">Discount</span><span class="price">- $30</span></div>
                             <div class="summary-item"><span class="text">Shipping</span><span class="price">$30</span></div>
-                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$product->price * $qty - 30 + 30  }}</span></div>
+                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$total - 30 + 30  }}</span></div>
                             <button type="button" class="btn main_bg text-light btn-lg btn-block">Checkout</button>
                         </div>
                     </div>
