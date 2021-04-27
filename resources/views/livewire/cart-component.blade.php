@@ -9,11 +9,13 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="items">
+
                             @if (session()->get("cart"))
                             @forelse (session()->get("cart") as $product_id =>$qty)
                             @php
                                 $product = App\Models\Product::findOrFail($product_id);
-                            @endphp
+                                @endphp
+
                             <div class="product">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -62,6 +64,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             @empty
 
                             @endforelse
@@ -74,7 +77,7 @@
                             <div class="summary-item"><span class="text">Subtotal</span><span class="price">$ {{$product->price * $qty}}</span></div>
                             <div class="summary-item"><span class="text">Discount</span><span class="price">- $30</span></div>
                             <div class="summary-item"><span class="text">Shipping</span><span class="price">$30</span></div>
-                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$product->price * $qty - 30 + 30  }}</span></div>
+                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$product->price - 30 + 30  }}</span></div>
                             <button type="button" class="btn main_bg text-light btn-lg btn-block">Checkout</button>
                         </div>
                     </div>
