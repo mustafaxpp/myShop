@@ -9,12 +9,14 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="items">
-
+                            @php
+                                $total = 0 ;
+                            @endphp
                             @if (session()->get("cart"))
                             @forelse (session()->get("cart") as $product_id =>$qty)
                             @php
                                 $product = App\Models\Product::findOrFail($product_id);
-                                @endphp
+                            @endphp
 
                             <div class="product">
                                 <div class="row">
@@ -57,7 +59,11 @@
 
                                                 </div>
                                                 <div class="col-md-3 price">
-                                                    <span>${{ $qty * $product->price }}</span>
+                                                    <span>${{$product->price * $qty}}
+                                                        @php
+                                                            $total = $total +=  $product->price * $qty;
+                                                        @endphp
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,22 +74,52 @@
                             @empty
 
                             @endforelse
-
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="summary">
                             <h3>Summary</h3>
-                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">$ {{$product->price * $qty}}</span></div>
+                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">$ {{$total}}</span></div>
                             <div class="summary-item"><span class="text">Discount</span><span class="price">- $30</span></div>
                             <div class="summary-item"><span class="text">Shipping</span><span class="price">$30</span></div>
-                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$product->price - 30 + 30  }}</span></div>
-                            <button type="button" class="btn main_bg text-light btn-lg btn-block">Checkout</button>
+                            <div class="summary-item"><span class="text">Total</span><span class="price">$ {{$total - 30 + 30  }}</span></div>
+                            <button data-toggle="modal" data-target="#staticBackdrop" type="button" class="btn main_bg text-light btn-lg btn-block">Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
+                {{-- Check out --}}
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body ">
+                                <div class="d-flex justify-content-between align-items-center"> <span class="text-uppercase">Pay Now</span> <i class="fab fa-window-close" data-dismiss="modal"></i> </div>
+                                <div class="mt-3 text-center fee align-items-center">
+                                    <h3 class="mb-0 font-weight-light">Total : </span><span class="price">$ {{$total - 30 + 30  }}</span></h3>
+                                </div>
+                                <div class="inputbox"> <small>Your Address </small> <input type="text" class="form-control" name=""> </div>
+                                <div class="mt-3"> <small>Payment Method</small>
+                                    <div class="d-flex flex-row">
+                                        <label class="radio1">
+                                            {{-- Paypal Button --}}
+                                            <div id="paypal-button-container"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-3 mr-2">
+                                    <div class="row g-2">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <hr class="mr-2 mt-4">
+                                <div class="mt-3 mr-2 d-flex justify-content-end align-items-center"> <a href="#" class="cancel" data-dismiss="modal">Cancel</a> <button class=" ml-2 btn btn-primary pay">PAY NOW</button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- Check out --}}
         </div>
         @else
             <div class="text-center border-collapse">

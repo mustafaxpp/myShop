@@ -16,6 +16,8 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Cheakout;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\PaymentMethodController;
@@ -80,6 +82,7 @@ Route::prefix("/")->middleware([])->group(function () {
         return view('collection');
     })->name('collection');
     Route::get('/cart', [CartController::class , "index"])->name('cart')->middleware(CheckLogin::class);
+    Route::get('/cheakout', [CheckoutController::class , "index"])->name('chekout')->middleware(CheckLogin::class);
 
 
 });
